@@ -5,3 +5,4 @@ export 'extensions/datetime_extension.dart';
 export 'extensions/double_extension.dart';
 export 'extensions/integer_extension.dart';
 export 'extensions/string_extension.dart';
+export 'l10n/generated/flutter_extension_localizations.dart';

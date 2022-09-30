@@ -1,10 +1,17 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_extensions/l10n/generated/flutter_extension_localizations.dart';
 
 extension BuildContextExtension on BuildContext {
   AppLocalizations get localizations => AppLocalizations.of(this)!;
 
+  FlutterExtensionLocalizations get _l10n =>
+      FlutterExtensionLocalizations.of(this)!;
+
+  ///
+  /// Wraps the [showDialog] method and returns an [AlertDialog]
+  ///
   Future<bool> showAlertDialog(
     Widget content, {
     String? title,
@@ -16,20 +23,20 @@ extension BuildContextExtension on BuildContext {
       builder: (BuildContext context) {
         return AlertDialog(
           title: Text(
-            title ?? localizations.confirm,
+            title ?? _l10n.confirm,
           ),
           content: content,
           actions: <Widget>[
             TextButton(
               onPressed: () => context.pop(false),
               child: Text(
-                cancelText ?? localizations.cancel,
+                cancelText ?? _l10n.cancel,
               ),
             ),
             TextButton(
               onPressed: () => context.pop(true),
               child: Text(
-                confirmText ?? localizations.accept,
+                confirmText ?? _l10n.accept,
               ),
             ),
           ],
@@ -38,6 +45,9 @@ extension BuildContextExtension on BuildContext {
     );
   }
 
+  ///
+  /// Wraps the [showDialog] method and returns a [SimpleDialog]
+  ///
   Future<void> showSimpleDialog(
     Widget title,
     List<Widget> children,
@@ -53,6 +63,9 @@ extension BuildContextExtension on BuildContext {
     );
   }
 
+  ///
+  /// Wraps the [showModalBottomSheet] method
+  ///
   Future<void> showBottomSheet(Widget child) async {
     return showModalBottomSheet<void>(
       context: this,
@@ -130,6 +143,9 @@ extension ScaffoldExtension on BuildContext {
 extension ScaffoldMessengerExtension on BuildContext {
   ScaffoldMessengerState get scaffoldMessenger => ScaffoldMessenger.of(this);
 
+  ///
+  /// Wraps the [ScaffoldMessanger.showMaterialBanner] method
+  ///
   void showMaterialBanner(
     String content, {
     Widget icon = const Icon(Icons.info),
@@ -142,7 +158,7 @@ extension ScaffoldMessengerExtension on BuildContext {
           leading: icon,
           actions: <Widget>[
             TextButton(
-              child: Text(localizations.dismiss),
+              child: Text(_l10n.dismiss),
               onPressed: () => scaffoldMessenger.hideCurrentMaterialBanner(),
             ),
           ],
@@ -150,6 +166,9 @@ extension ScaffoldMessengerExtension on BuildContext {
       );
   }
 
+  ///
+  /// Wraps the [ScaffoldMessanger.showSnackBar] method
+  ///
   void showSnackBar(
     String text, {
     SnackBarAction? action,
@@ -162,7 +181,7 @@ extension ScaffoldMessengerExtension on BuildContext {
           duration: const Duration(seconds: kDebugMode ? 90 : 10),
           action: action ??
               SnackBarAction(
-                label: localizations.dismiss,
+                label: _l10n.dismiss,
                 onPressed: () => scaffoldMessenger.hideCurrentSnackBar(),
               ),
         ),
