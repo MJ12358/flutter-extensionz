@@ -66,9 +66,15 @@ extension BuildContextExtension on BuildContext {
   ///
   /// Wraps the [showModalBottomSheet] method
   ///
-  Future<void> showBottomSheet(Widget child) async {
+  Future<void> showBottomSheet(
+    Widget child, {
+    bool isScrollControlled = false,
+    bool isDismissible = true,
+  }) async {
     return showModalBottomSheet<void>(
       context: this,
+      isDismissible: isDismissible,
+      isScrollControlled: isScrollControlled,
       builder: (BuildContext context) {
         return child;
       },
