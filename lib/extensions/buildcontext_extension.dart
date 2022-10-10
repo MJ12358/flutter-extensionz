@@ -2,10 +2,9 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_extensions/l10n/generated/flutter_extension_localizations.dart';
+import 'package:intl/intl.dart';
 
 extension BuildContextExtension on BuildContext {
-  AppLocalizations get localizations => AppLocalizations.of(this)!;
-
   FlutterExtensionLocalizations get _l10n =>
       FlutterExtensionLocalizations.of(this)!;
 
@@ -80,6 +79,37 @@ extension BuildContextExtension on BuildContext {
       },
     );
   }
+
+  Future<void> showCalendar({
+    DateTime? firstDate,
+    DateTime? initialDate,
+    DateTime? lastDate,
+  }) async {
+    await showDatePicker(
+      context: this,
+      firstDate: firstDate ?? DateTime.now(),
+      initialDate: initialDate ?? DateTime.now(),
+      lastDate: lastDate ?? DateTime.now().add(const Duration(days: 365)),
+    );
+  }
+}
+
+extension FocusScopeExtension on BuildContext {
+  FocusScopeNode get focusScope => FocusScope.of(this);
+
+  void requestFocus([FocusNode? node]) {
+    focusScope.requestFocus(node);
+  }
+}
+
+extension LocalizationExtension on BuildContext {
+  AppLocalizations get localizations => AppLocalizations.of(this)!;
+
+  String get currencySymbol {
+    final NumberFormat format =
+        NumberFormat.simpleCurrency(locale: localizations.localeName);
+    return format.currencySymbol;
+  }
 }
 
 extension MediaQueryExtension on BuildContext {
@@ -137,12 +167,18 @@ extension NavigatorExtension on BuildContext {
 extension ScaffoldExtension on BuildContext {
   ScaffoldState get scaffold => Scaffold.of(this);
 
+  ///
+  /// Wraps the [Scaffold.openDrawer] method
+  ///
   void openDrawer() {
     scaffold.openDrawer();
   }
 
+  ///
+  /// Wraps the [Scaffold.closeDrawer] method
+  ///
   void closeDrawer() {
-    scaffold.openEndDrawer();
+    scaffold.closeDrawer();
   }
 }
 
