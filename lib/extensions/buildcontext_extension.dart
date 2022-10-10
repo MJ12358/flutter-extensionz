@@ -80,12 +80,12 @@ extension BuildContextExtension on BuildContext {
     );
   }
 
-  Future<void> showCalendar({
+  Future<DateTime?> showCalendar({
     DateTime? firstDate,
     DateTime? initialDate,
     DateTime? lastDate,
   }) async {
-    await showDatePicker(
+    return await showDatePicker(
       context: this,
       firstDate: firstDate ?? DateTime.now(),
       initialDate: initialDate ?? DateTime.now(),
