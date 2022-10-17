@@ -30,6 +30,18 @@ extension ColorExtension on Color {
     return hslLight.toColor();
   }
 
+  Color shade([double value = 0.5]) {
+    if (value <= 0) {
+      return materialColor[50]!;
+    }
+    if (value >= 1) {
+      return materialColor[900]!;
+    }
+    final num mod = pow(10.0, 1);
+    final int shade = (value * mod).round() * 1000;
+    return materialColor[shade ~/ mod]!;
+  }
+
   MaterialColor get materialColor {
     final List<double> strengths = <double>[.05];
     final Map<int, Color> swatch = <int, Color>{};
