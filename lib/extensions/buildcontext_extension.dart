@@ -133,8 +133,8 @@ extension ModalRouteExtension on BuildContext {
 }
 
 extension NavigatorExtension on BuildContext {
-  void push(Widget page) {
-    Navigator.push(
+  Future<dynamic> push(Widget page) {
+    return Navigator.push(
       this,
       MaterialPageRoute<dynamic>(builder: (_) => page),
     );
