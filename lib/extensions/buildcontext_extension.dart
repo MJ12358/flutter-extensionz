@@ -80,6 +80,9 @@ extension BuildContextExtension on BuildContext {
     );
   }
 
+  ///
+  /// Wraps the [showDatePicker] method
+  ///
   Future<DateTime?> showCalendar({
     DateTime? firstDate,
     DateTime? initialDate,
@@ -117,14 +120,16 @@ extension MediaQueryExtension on BuildContext {
 
   Size get deviceSize => mediaQuery.size;
 
-  double getProportionateScreenHeight(double height) {
+  double getProportionateScreenHeight(double height,
+      [double layoutHeight = 812.0]) {
     final double screenHeight = deviceSize.height;
-    return (height / 812.0) * screenHeight;
+    return (height / layoutHeight) * screenHeight;
   }
 
-  double getProportionateScreenWidth(double width) {
+  double getProportionateScreenWidth(double width,
+      [double layoutWidth = 315.0]) {
     final double screenWidth = deviceSize.width;
-    return (width / 375.0) * screenWidth;
+    return (width / layoutWidth) * screenWidth;
   }
 }
 
@@ -186,7 +191,7 @@ extension ScaffoldMessengerExtension on BuildContext {
   ScaffoldMessengerState get scaffoldMessenger => ScaffoldMessenger.of(this);
 
   ///
-  /// Wraps the [ScaffoldMessanger.showMaterialBanner] method
+  /// Wraps the [ScaffoldMessenger.showMaterialBanner] method
   ///
   void showMaterialBanner(
     String content, {
@@ -209,7 +214,14 @@ extension ScaffoldMessengerExtension on BuildContext {
   }
 
   ///
-  /// Wraps the [ScaffoldMessanger.showSnackBar] method
+  /// Wraps the [ScaffoldMessenger.clearMaterialBanners] method
+  ///
+  void closeMaterialBanner() {
+    scaffoldMessenger.clearMaterialBanners();
+  }
+
+  ///
+  /// Wraps the [ScaffoldMessenger.showSnackBar] method
   ///
   void showSnackBar(
     String text, {
@@ -228,6 +240,13 @@ extension ScaffoldMessengerExtension on BuildContext {
               ),
         ),
       );
+  }
+
+  ///
+  /// Wraps the [ScaffoldMessenger.clearSnackBars] method
+  ///
+  void closeSnackBar() {
+    scaffoldMessenger.clearSnackBars();
   }
 }
 
