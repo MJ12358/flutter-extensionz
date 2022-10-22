@@ -120,16 +120,45 @@ extension MediaQueryExtension on BuildContext {
 
   Size get deviceSize => mediaQuery.size;
 
-  double getProportionateScreenHeight(double height,
-      [double layoutHeight = 812.0]) {
-    final double screenHeight = deviceSize.height;
-    return (height / layoutHeight) * screenHeight;
+  double get height => deviceSize.height;
+
+  double get width => deviceSize.width;
+
+  double getProportionateScreenHeight(
+    double height, [
+    double layoutHeight = 812.0,
+  ]) {
+    return (height / layoutHeight) * height;
   }
 
-  double getProportionateScreenWidth(double width,
-      [double layoutWidth = 315.0]) {
-    final double screenWidth = deviceSize.width;
-    return (width / layoutWidth) * screenWidth;
+  double getProportionateScreenWidth(
+    double width, [
+    double layoutWidth = 315.0,
+  ]) {
+    return (width / layoutWidth) * width;
+  }
+
+  double heightTransformer({
+    double dividedBy = 1.0,
+    double reducedBy = 0.0,
+  }) {
+    return (height - ((height / 100) * reducedBy)) / dividedBy;
+  }
+
+  double widthTransformer({
+    double dividedBy = 1.0,
+    reducedBy = 0.0,
+  }) {
+    return (width - ((width / 100) * reducedBy)) / dividedBy;
+  }
+
+  double ratio({
+    double dividedBy = 1.0,
+    double reducedByW = 0.0,
+    double reducedByH = 0.0,
+  }) {
+    return heightTransformer(dividedBy: dividedBy, reducedBy: reducedByH) /
+        widthTransformer(dividedBy: dividedBy, reducedBy: reducedByW);
   }
 }
 
@@ -194,14 +223,14 @@ extension ScaffoldMessengerExtension on BuildContext {
   /// Wraps the [ScaffoldMessenger.showMaterialBanner] method
   ///
   void showMaterialBanner(
-    String content, {
+    String text, {
     Widget icon = const Icon(Icons.info),
   }) {
     scaffoldMessenger
       ..hideCurrentMaterialBanner()
       ..showMaterialBanner(
         MaterialBanner(
-          content: Text(content),
+          content: Text(text),
           leading: icon,
           actions: <Widget>[
             TextButton(
@@ -226,13 +255,14 @@ extension ScaffoldMessengerExtension on BuildContext {
   void showSnackBar(
     String text, {
     SnackBarAction? action,
+    int? duration,
   }) {
     scaffoldMessenger
       ..hideCurrentSnackBar()
       ..showSnackBar(
         SnackBar(
           content: Text(text),
-          duration: const Duration(seconds: kDebugMode ? 90 : 10),
+          duration: Duration(seconds: kDebugMode ? 90 : duration ?? 10),
           action: action ??
               SnackBarAction(
                 label: _l10n.dismiss,
@@ -254,6 +284,8 @@ extension ThemeExtension on BuildContext {
   ThemeData get theme => Theme.of(this);
 
   ColorScheme get colorScheme => theme.colorScheme;
+
+  IconThemeData get iconTheme => theme.iconTheme;
 
   TextTheme get textTheme => theme.textTheme;
 }

@@ -1,5 +1,5 @@
 extension BooleanExtension on bool {
-  int toInt() {
+  int get toInt {
     return this ? 1 : 0;
   }
 }

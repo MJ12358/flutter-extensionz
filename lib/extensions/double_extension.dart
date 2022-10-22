@@ -24,4 +24,9 @@ extension DoubleExtension on double {
 
     return temp / mod;
   }
+
+  double toPrecision(int fractionDigits) {
+    final double mod = pow(10, fractionDigits.toDouble()).toDouble();
+    return ((this * mod).round().toDouble() / mod);
+  }
 }

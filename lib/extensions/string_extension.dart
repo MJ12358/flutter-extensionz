@@ -10,19 +10,19 @@ extension StringExtension on String {
     return '${split[0].substring(0, 1)} ${split[0].substring(1, 2)}';
   }
 
-  String capitalize() {
+  String get capitalize {
     if (isEmpty) {
       return this;
     }
     return '${this[0].toUpperCase()}${substring(1).toLowerCase()}';
   }
 
-  String toTitleCase() {
+  String get titleCase {
     if (isEmpty) {
       return this;
     }
     final List<String> split = this.split(RegExp(' +'));
-    return split.map((String str) => str.capitalize()).join(' ');
+    return split.map((String str) => str.capitalize).join(' ');
   }
 
   List<String> splitByLength(int length) {
