@@ -12,7 +12,7 @@ flutter_extensions:
 ## Usage
 
 ```dart
-import 'package:flutter_extensions/flutter_extensions.dart'
+import 'package:flutter_extensions/flutter_extensions.dart';
 
 context.showSnackBar('The snack bar text');
 ```
