@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_extensions/l10n/generated/flutter_extension_localizations.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:intl/intl.dart';
 
 extension BuildContextExtension on BuildContext {
@@ -108,6 +109,8 @@ extension FocusScopeExtension on BuildContext {
 }
 
 extension LocalizationExtension on BuildContext {
+  AppLocalizations get localizations => AppLocalizations.of(this)!;
+
   ///
   /// Get localized currency symbol
   ///
