@@ -1,6 +1,5 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_extensions/l10n/generated/flutter_extension_localizations.dart';
 import 'package:intl/intl.dart';
 
@@ -9,7 +8,7 @@ extension BuildContextExtension on BuildContext {
       FlutterExtensionLocalizations.of(this)!;
 
   ///
-  /// Wraps the [showDialog] method and returns an [AlertDialog]
+  /// Wraps the [showDialog] method and builds an [AlertDialog]
   ///
   Future<bool> showAlertDialog(
     Widget content, {
@@ -45,12 +44,12 @@ extension BuildContextExtension on BuildContext {
   }
 
   ///
-  /// Wraps the [showDialog] method and returns a [SimpleDialog]
+  /// Wraps the [showDialog] method and builds a [SimpleDialog]
   ///
-  Future<void> showSimpleDialog(
-    Widget title,
-    List<Widget> children,
-  ) async {
+  Future<dynamic> showSimpleDialog({
+    required Widget title,
+    required List<Widget> children,
+  }) async {
     return showDialog(
       context: this,
       builder: (BuildContext context) {
@@ -65,12 +64,12 @@ extension BuildContextExtension on BuildContext {
   ///
   /// Wraps the [showModalBottomSheet] method
   ///
-  Future<void> showBottomSheet(
-    Widget child, {
+  Future<dynamic> showBottomSheet({
+    required Widget child,
     bool isScrollControlled = false,
     bool isDismissible = true,
   }) async {
-    return showModalBottomSheet<void>(
+    return showModalBottomSheet(
       context: this,
       isDismissible: isDismissible,
       isScrollControlled: isScrollControlled,
@@ -100,17 +99,21 @@ extension BuildContextExtension on BuildContext {
 extension FocusScopeExtension on BuildContext {
   FocusScopeNode get focusScope => FocusScope.of(this);
 
+  ///
+  /// Wraps the [FocusScope.requestFocus] method
+  ///
   void requestFocus([FocusNode? node]) {
     focusScope.requestFocus(node);
   }
 }
 
 extension LocalizationExtension on BuildContext {
-  AppLocalizations get localizations => AppLocalizations.of(this)!;
-
+  ///
+  /// Get localized currency symbol
+  ///
   String get currencySymbol {
     final NumberFormat format =
-        NumberFormat.simpleCurrency(locale: localizations.localeName);
+        NumberFormat.simpleCurrency(locale: _l10n.localeName);
     return format.currencySymbol;
   }
 }
@@ -174,23 +177,35 @@ extension NavigatorExtension on BuildContext {
     );
   }
 
+  ///
+  /// Wraps the [Navigator.pop] method
+  ///
   void pop([Object? result]) {
     Navigator.pop(this, result);
   }
 
-  void maybePop([Object? result]) {
-    Navigator.maybePop(this, result);
+  ///
+  /// Wraps the [Navigator.mabyPop] method
+  ///
+  Future<bool> maybePop([Object? result]) {
+    return Navigator.maybePop(this, result);
   }
 
-  void pushReplacement(Widget page) {
-    Navigator.pushReplacement(
+  ///
+  /// Wraps the [Navigator.pushReplacement] method
+  ///
+  Future<dynamic> pushReplacement(Widget page) {
+    return Navigator.pushReplacement(
       this,
       MaterialPageRoute<dynamic>(builder: (_) => page),
     );
   }
 
-  void pushAndRemove(Widget page) {
-    Navigator.pushAndRemoveUntil(
+  ///
+  /// Wraps the [Navigator.pushAndRemoveUntil] method
+  ///
+  Future<dynamic> pushAndRemove(Widget page) {
+    return Navigator.pushAndRemoveUntil(
       this,
       MaterialPageRoute<dynamic>(builder: (_) => page),
       (Route<dynamic> route) => false,

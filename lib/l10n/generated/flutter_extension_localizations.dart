@@ -6,6 +6,9 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart' as intl;
 
 import 'flutter_extension_localizations_en.dart';
+import 'flutter_extension_localizations_es.dart';
+import 'flutter_extension_localizations_fr.dart';
+import 'flutter_extension_localizations_ru.dart';
 
 /// Callers can lookup localized strings with an instance of FlutterExtensionLocalizations
 /// returned by `FlutterExtensionLocalizations.of(context)`.
@@ -88,7 +91,10 @@ abstract class FlutterExtensionLocalizations {
 
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[
-    Locale('en')
+    Locale('en'),
+    Locale('es'),
+    Locale('fr'),
+    Locale('ru')
   ];
 
   /// No description provided for @accept.
@@ -125,7 +131,7 @@ class _FlutterExtensionLocalizationsDelegate extends LocalizationsDelegate<Flutt
   }
 
   @override
-  bool isSupported(Locale locale) => <String>['en'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => <String>['en', 'es', 'fr', 'ru'].contains(locale.languageCode);
 
   @override
   bool shouldReload(_FlutterExtensionLocalizationsDelegate old) => false;
@@ -137,6 +143,9 @@ FlutterExtensionLocalizations lookupFlutterExtensionLocalizations(Locale locale)
   // Lookup logic when only language code is specified.
   switch (locale.languageCode) {
     case 'en': return FlutterExtensionLocalizationsEn();
+    case 'es': return FlutterExtensionLocalizationsEs();
+    case 'fr': return FlutterExtensionLocalizationsFr();
+    case 'ru': return FlutterExtensionLocalizationsRu();
   }
 
   throw FlutterError(
