@@ -8,7 +8,13 @@ import 'package:intl/intl.dart' as intl;
 import 'flutter_extension_localizations_en.dart';
 import 'flutter_extension_localizations_es.dart';
 import 'flutter_extension_localizations_fr.dart';
+import 'flutter_extension_localizations_id.dart';
+import 'flutter_extension_localizations_it.dart';
+import 'flutter_extension_localizations_ja.dart';
+import 'flutter_extension_localizations_ko.dart';
+import 'flutter_extension_localizations_pt.dart';
 import 'flutter_extension_localizations_ru.dart';
+import 'flutter_extension_localizations_zh.dart';
 
 /// Callers can lookup localized strings with an instance of FlutterExtensionLocalizations
 /// returned by `FlutterExtensionLocalizations.of(context)`.
@@ -94,7 +100,13 @@ abstract class FlutterExtensionLocalizations {
     Locale('en'),
     Locale('es'),
     Locale('fr'),
-    Locale('ru')
+    Locale('id'),
+    Locale('it'),
+    Locale('ja'),
+    Locale('ko'),
+    Locale('pt'),
+    Locale('ru'),
+    Locale('zh')
   ];
 
   /// No description provided for @accept.
@@ -131,7 +143,7 @@ class _FlutterExtensionLocalizationsDelegate extends LocalizationsDelegate<Flutt
   }
 
   @override
-  bool isSupported(Locale locale) => <String>['en', 'es', 'fr', 'ru'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => <String>['en', 'es', 'fr', 'id', 'it', 'ja', 'ko', 'pt', 'ru', 'zh'].contains(locale.languageCode);
 
   @override
   bool shouldReload(_FlutterExtensionLocalizationsDelegate old) => false;
@@ -145,7 +157,13 @@ FlutterExtensionLocalizations lookupFlutterExtensionLocalizations(Locale locale)
     case 'en': return FlutterExtensionLocalizationsEn();
     case 'es': return FlutterExtensionLocalizationsEs();
     case 'fr': return FlutterExtensionLocalizationsFr();
+    case 'id': return FlutterExtensionLocalizationsId();
+    case 'it': return FlutterExtensionLocalizationsIt();
+    case 'ja': return FlutterExtensionLocalizationsJa();
+    case 'ko': return FlutterExtensionLocalizationsKo();
+    case 'pt': return FlutterExtensionLocalizationsPt();
     case 'ru': return FlutterExtensionLocalizationsRu();
+    case 'zh': return FlutterExtensionLocalizationsZh();
   }
 
   throw FlutterError(
