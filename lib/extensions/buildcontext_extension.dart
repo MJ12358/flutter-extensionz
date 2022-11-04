@@ -5,9 +5,6 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:intl/intl.dart';
 
 extension BuildContextExtension on BuildContext {
-  FlutterExtensionLocalizations get _l10n =>
-      FlutterExtensionLocalizations.of(this)!;
-
   ///
   /// Wraps the [showDialog] method and builds an [AlertDialog]
   ///
@@ -47,11 +44,11 @@ extension BuildContextExtension on BuildContext {
   ///
   /// Wraps the [showDialog] method and builds a [SimpleDialog]
   ///
-  Future<dynamic> showSimpleDialog({
+  Future<T?> showSimpleDialog<T>({
     required Widget title,
     required List<Widget> children,
   }) async {
-    return showDialog(
+    return showDialog<T>(
       context: this,
       builder: (BuildContext context) {
         return SimpleDialog(
@@ -65,12 +62,12 @@ extension BuildContextExtension on BuildContext {
   ///
   /// Wraps the [showModalBottomSheet] method
   ///
-  Future<dynamic> showBottomSheet({
+  Future<T?> showBottomSheet<T>({
     required Widget child,
     bool isScrollControlled = false,
     bool isDismissible = true,
   }) async {
-    return showModalBottomSheet(
+    return showModalBottomSheet<T>(
       context: this,
       isDismissible: isDismissible,
       isScrollControlled: isScrollControlled,
@@ -87,8 +84,8 @@ extension BuildContextExtension on BuildContext {
     DateTime? firstDate,
     DateTime? initialDate,
     DateTime? lastDate,
-  }) async {
-    return await showDatePicker(
+  }) {
+    return showDatePicker(
       context: this,
       firstDate: firstDate ?? DateTime.now(),
       initialDate: initialDate ?? DateTime.now(),
@@ -110,6 +107,9 @@ extension FocusScopeExtension on BuildContext {
 
 extension LocalizationExtension on BuildContext {
   AppLocalizations get localizations => AppLocalizations.of(this)!;
+
+  FlutterExtensionLocalizations get _l10n =>
+      FlutterExtensionLocalizations.of(this)!;
 
   ///
   /// Get localized currency symbol
