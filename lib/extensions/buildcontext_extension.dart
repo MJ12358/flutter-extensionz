@@ -128,6 +128,7 @@ extension LocalizationExtension on BuildContext {
       return '';
     }
 
+    // DateFormat.MEd(_l10n.localeName).format(value);
     final DateFormat dateFormat = DateFormat('MM/dd/yyyy', _l10n.localeName);
     return dateFormat.format(value);
   }
@@ -211,10 +212,10 @@ extension ModalRouteExtension on BuildContext {
 }
 
 extension NavigatorExtension on BuildContext {
-  Future<dynamic> push(Widget page) {
+  Future<T?> push<T>(Widget page) {
     return Navigator.push(
       this,
-      MaterialPageRoute<dynamic>(builder: (_) => page),
+      MaterialPageRoute<T>(builder: (_) => page),
     );
   }
 
@@ -235,20 +236,20 @@ extension NavigatorExtension on BuildContext {
   ///
   /// Wraps the [Navigator.pushReplacement] method
   ///
-  Future<dynamic> pushReplacement(Widget page) {
+  Future<T?> pushReplacement<T>(Widget page) {
     return Navigator.pushReplacement(
       this,
-      MaterialPageRoute<dynamic>(builder: (_) => page),
+      MaterialPageRoute<T>(builder: (_) => page),
     );
   }
 
   ///
   /// Wraps the [Navigator.pushAndRemoveUntil] method
   ///
-  Future<dynamic> pushAndRemove(Widget page) {
+  Future<T?> pushAndRemove<T>(Widget page) {
     return Navigator.pushAndRemoveUntil(
       this,
-      MaterialPageRoute<dynamic>(builder: (_) => page),
+      MaterialPageRoute<T>(builder: (_) => page),
       (Route<dynamic> route) => false,
     );
   }
