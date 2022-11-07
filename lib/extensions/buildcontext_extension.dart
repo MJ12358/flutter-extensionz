@@ -119,6 +119,44 @@ extension LocalizationExtension on BuildContext {
         NumberFormat.simpleCurrency(locale: _l10n.localeName);
     return format.currencySymbol;
   }
+
+  ///
+  /// Get localized date
+  ///
+  String formatDate(DateTime? value) {
+    if (value == null) {
+      return '';
+    }
+
+    final DateFormat dateFormat = DateFormat('MM/dd/yyyy', _l10n.localeName);
+    return dateFormat.format(value);
+  }
+
+  ///
+  /// Get localized number
+  ///
+  String formatNumber(num? value) {
+    if (value == null) {
+      return '';
+    }
+
+    final NumberFormat numberFormat =
+        NumberFormat.decimalPattern(_l10n.localeName);
+    return numberFormat.format(value);
+  }
+
+  ///
+  /// Get localized percent
+  ///
+  String formatPercent(num? value) {
+    if (value == null) {
+      return '';
+    }
+
+    final NumberFormat numberFormat =
+        NumberFormat.percentPattern(_l10n.localeName);
+    return numberFormat.format(value);
+  }
 }
 
 extension MediaQueryExtension on BuildContext {
