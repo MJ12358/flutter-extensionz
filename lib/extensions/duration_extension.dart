@@ -12,6 +12,7 @@ extension DurationExtension on Duration {
   int get monthsPerYear => 12;
   int get daysPerWeek => 7;
 
+  // TODO: finish this
   // int get years => (inDays * daysPerYear) % daysPerYear;
   // int get months =>
   //     (((inDays * daysPerYear) / monthsPerYear) % monthsPerYear).round();

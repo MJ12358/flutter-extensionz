@@ -169,6 +169,10 @@ extension MediaQueryExtension on BuildContext {
 
   double get width => deviceSize.width;
 
+  bool get isLandscape => mediaQuery.orientation == Orientation.landscape;
+
+  bool get isPortrait => mediaQuery.orientation == Orientation.portrait;
+
   double getProportionateScreenHeight(
     double height, [
     double layoutHeight = 812.0,

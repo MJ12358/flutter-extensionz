@@ -5,10 +5,10 @@ extension StringExtension on String {
   }
 
   String get initials {
-    if (isEmpty) {
+    if (isBlank) {
       return 'NA';
     }
-    final List<String> split = this.split(RegExp(' +'));
+    final List<String> split = trim().split(RegExp(' +'));
     if (split.length >= 2) {
       return '${split[0].substring(0, 1)} ${split[1].substring(0, 1)}';
     }
@@ -16,17 +16,17 @@ extension StringExtension on String {
   }
 
   String get capitalize {
-    if (isEmpty) {
+    if (isBlank) {
       return this;
     }
     return '${this[0].toUpperCase()}${substring(1).toLowerCase()}';
   }
 
   String get titleCase {
-    if (isEmpty) {
+    if (isBlank) {
       return this;
     }
-    final List<String> split = this.split(RegExp(' +'));
+    final List<String> split = trim().split(RegExp(' +'));
     return split.map((String str) => str.capitalize).join(' ');
   }
 
