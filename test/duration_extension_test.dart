@@ -1,4 +1,4 @@
-import 'package:flutter_extensions/extensions/duration_extension.dart';
+import 'package:flutter_extensions/src/duration_extension.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:flutter_extensions/extensions/number_extension.dart';
+import 'package:flutter_extensions/src/number_extension.dart';
 
 extension DurationExtension on Duration {
   Future<dynamic> delay([FutureOr Function()? callback]) async {
