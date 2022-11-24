@@ -16,20 +16,20 @@ extension BuildContextExtension on BuildContext {
       builder: (BuildContext context) {
         return AlertDialog(
           title: Text(
-            title ?? _l10n.confirm,
+            title ?? fl10n.confirm,
           ),
           content: content,
           actions: <Widget>[
             TextButton(
               onPressed: () => context.pop(false),
               child: Text(
-                cancelText ?? _l10n.cancel,
+                cancelText ?? fl10n.cancel,
               ),
             ),
             TextButton(
               onPressed: () => context.pop(true),
               child: Text(
-                confirmText ?? _l10n.accept,
+                confirmText ?? fl10n.accept,
               ),
             ),
           ],

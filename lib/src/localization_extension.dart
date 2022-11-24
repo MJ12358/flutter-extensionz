@@ -6,7 +6,7 @@ import 'package:intl/intl.dart';
 extension LocalizationExtension on BuildContext {
   AppLocalizations get localizations => AppLocalizations.of(this)!;
 
-  FlutterExtensionLocalizations get _l10n =>
+  FlutterExtensionLocalizations get fl10n =>
       FlutterExtensionLocalizations.of(this)!;
 
   ///
@@ -14,7 +14,7 @@ extension LocalizationExtension on BuildContext {
   ///
   String get currencySymbol {
     final NumberFormat format =
-        NumberFormat.simpleCurrency(locale: _l10n.localeName);
+        NumberFormat.simpleCurrency(locale: fl10n.localeName);
     return format.currencySymbol;
   }
 
@@ -27,7 +27,7 @@ extension LocalizationExtension on BuildContext {
     }
 
     // DateFormat.MEd(_l10n.localeName).format(value);
-    final DateFormat dateFormat = DateFormat('MM/dd/yyyy', _l10n.localeName);
+    final DateFormat dateFormat = DateFormat('MM/dd/yyyy', fl10n.localeName);
     return dateFormat.format(value);
   }
 
@@ -40,7 +40,7 @@ extension LocalizationExtension on BuildContext {
     }
 
     final NumberFormat numberFormat =
-        NumberFormat.decimalPattern(_l10n.localeName);
+        NumberFormat.decimalPattern(fl10n.localeName);
     return numberFormat.format(value);
   }
 
@@ -53,7 +53,7 @@ extension LocalizationExtension on BuildContext {
     }
 
     final NumberFormat numberFormat =
-        NumberFormat.percentPattern(_l10n.localeName);
+        NumberFormat.percentPattern(fl10n.localeName);
     return numberFormat.format(value);
   }
 }
