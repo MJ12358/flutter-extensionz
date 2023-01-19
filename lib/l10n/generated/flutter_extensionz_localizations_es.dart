@@ -1,8 +1,8 @@
-import 'flutter_extension_localizations.dart';
+import 'flutter_extensionz_localizations.dart';
 
 /// The translations for Spanish Castilian (`es`).
-class FlutterExtensionLocalizationsEs extends FlutterExtensionLocalizations {
-  FlutterExtensionLocalizationsEs([String locale = 'es']) : super(locale);
+class FlutterExtensionzLocalizationsEs extends FlutterExtensionzLocalizations {
+  FlutterExtensionzLocalizationsEs([String locale = 'es']) : super(locale);
 
   @override
   String get accept => 'Aceptar';

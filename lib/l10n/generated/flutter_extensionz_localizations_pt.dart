@@ -1,8 +1,8 @@
-import 'flutter_extension_localizations.dart';
+import 'flutter_extensionz_localizations.dart';
 
 /// The translations for Portuguese (`pt`).
-class FlutterExtensionLocalizationsPt extends FlutterExtensionLocalizations {
-  FlutterExtensionLocalizationsPt([String locale = 'pt']) : super(locale);
+class FlutterExtensionzLocalizationsPt extends FlutterExtensionzLocalizations {
+  FlutterExtensionzLocalizationsPt([String locale = 'pt']) : super(locale);
 
   @override
   String get accept => 'Aceitar';

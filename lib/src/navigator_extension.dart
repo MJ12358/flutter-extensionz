@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 
 extension NavigatorExtension on BuildContext {
+  NavigatorState get navigator => Navigator.of(this);
+
+  ///
+  /// Wraps the [Navigator.push] method
+  ///
   Future<T?> push<T>(Widget page) {
     return Navigator.push(
       this,
@@ -18,8 +23,8 @@ extension NavigatorExtension on BuildContext {
   ///
   /// Wraps the [Navigator.mabyPop] method
   ///
-  Future<bool> maybePop([Object? result]) {
-    return Navigator.maybePop(this, result);
+  Future<bool> maybePop<T>([T? result]) {
+    return Navigator.maybePop<T>(this, result);
   }
 
   ///

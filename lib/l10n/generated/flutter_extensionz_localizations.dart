@@ -5,30 +5,30 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart' as intl;
 
-import 'flutter_extension_localizations_en.dart';
-import 'flutter_extension_localizations_es.dart';
-import 'flutter_extension_localizations_fr.dart';
-import 'flutter_extension_localizations_id.dart';
-import 'flutter_extension_localizations_it.dart';
-import 'flutter_extension_localizations_ja.dart';
-import 'flutter_extension_localizations_ko.dart';
-import 'flutter_extension_localizations_pt.dart';
-import 'flutter_extension_localizations_ru.dart';
-import 'flutter_extension_localizations_zh.dart';
+import 'flutter_extensionz_localizations_en.dart';
+import 'flutter_extensionz_localizations_es.dart';
+import 'flutter_extensionz_localizations_fr.dart';
+import 'flutter_extensionz_localizations_id.dart';
+import 'flutter_extensionz_localizations_it.dart';
+import 'flutter_extensionz_localizations_ja.dart';
+import 'flutter_extensionz_localizations_ko.dart';
+import 'flutter_extensionz_localizations_pt.dart';
+import 'flutter_extensionz_localizations_ru.dart';
+import 'flutter_extensionz_localizations_zh.dart';
 
-/// Callers can lookup localized strings with an instance of FlutterExtensionLocalizations
-/// returned by `FlutterExtensionLocalizations.of(context)`.
+/// Callers can lookup localized strings with an instance of FlutterExtensionzLocalizations
+/// returned by `FlutterExtensionzLocalizations.of(context)`.
 ///
-/// Applications need to include `FlutterExtensionLocalizations.delegate()` in their app's
+/// Applications need to include `FlutterExtensionzLocalizations.delegate()` in their app's
 /// `localizationDelegates` list, and the locales they support in the app's
 /// `supportedLocales` list. For example:
 ///
 /// ```dart
-/// import 'generated/flutter_extension_localizations.dart';
+/// import 'generated/flutter_extensionz_localizations.dart';
 ///
 /// return MaterialApp(
-///   localizationsDelegates: FlutterExtensionLocalizations.localizationsDelegates,
-///   supportedLocales: FlutterExtensionLocalizations.supportedLocales,
+///   localizationsDelegates: FlutterExtensionzLocalizations.localizationsDelegates,
+///   supportedLocales: FlutterExtensionzLocalizations.supportedLocales,
 ///   home: MyApplicationHome(),
 /// );
 /// ```
@@ -65,18 +65,18 @@ import 'flutter_extension_localizations_zh.dart';
 /// Select and expand the newly-created Localizations item then, for each
 /// locale your application supports, add a new item and select the locale
 /// you wish to add from the pop-up menu in the Value field. This list should
-/// be consistent with the languages listed in the FlutterExtensionLocalizations.supportedLocales
+/// be consistent with the languages listed in the FlutterExtensionzLocalizations.supportedLocales
 /// property.
-abstract class FlutterExtensionLocalizations {
-  FlutterExtensionLocalizations(String locale) : localeName = intl.Intl.canonicalizedLocale(locale.toString());
+abstract class FlutterExtensionzLocalizations {
+  FlutterExtensionzLocalizations(String locale) : localeName = intl.Intl.canonicalizedLocale(locale.toString());
 
   final String localeName;
 
-  static FlutterExtensionLocalizations? of(BuildContext context) {
-    return Localizations.of<FlutterExtensionLocalizations>(context, FlutterExtensionLocalizations);
+  static FlutterExtensionzLocalizations of(BuildContext context) {
+    return Localizations.of<FlutterExtensionzLocalizations>(context, FlutterExtensionzLocalizations)!;
   }
 
-  static const LocalizationsDelegate<FlutterExtensionLocalizations> delegate = _FlutterExtensionLocalizationsDelegate();
+  static const LocalizationsDelegate<FlutterExtensionzLocalizations> delegate = _FlutterExtensionzLocalizationsDelegate();
 
   /// A list of this localizations delegate along with the default localizations
   /// delegates.
@@ -134,40 +134,40 @@ abstract class FlutterExtensionLocalizations {
   String get dismiss;
 }
 
-class _FlutterExtensionLocalizationsDelegate extends LocalizationsDelegate<FlutterExtensionLocalizations> {
-  const _FlutterExtensionLocalizationsDelegate();
+class _FlutterExtensionzLocalizationsDelegate extends LocalizationsDelegate<FlutterExtensionzLocalizations> {
+  const _FlutterExtensionzLocalizationsDelegate();
 
   @override
-  Future<FlutterExtensionLocalizations> load(Locale locale) {
-    return SynchronousFuture<FlutterExtensionLocalizations>(lookupFlutterExtensionLocalizations(locale));
+  Future<FlutterExtensionzLocalizations> load(Locale locale) {
+    return SynchronousFuture<FlutterExtensionzLocalizations>(lookupFlutterExtensionzLocalizations(locale));
   }
 
   @override
   bool isSupported(Locale locale) => <String>['en', 'es', 'fr', 'id', 'it', 'ja', 'ko', 'pt', 'ru', 'zh'].contains(locale.languageCode);
 
   @override
-  bool shouldReload(_FlutterExtensionLocalizationsDelegate old) => false;
+  bool shouldReload(_FlutterExtensionzLocalizationsDelegate old) => false;
 }
 
-FlutterExtensionLocalizations lookupFlutterExtensionLocalizations(Locale locale) {
+FlutterExtensionzLocalizations lookupFlutterExtensionzLocalizations(Locale locale) {
 
 
   // Lookup logic when only language code is specified.
   switch (locale.languageCode) {
-    case 'en': return FlutterExtensionLocalizationsEn();
-    case 'es': return FlutterExtensionLocalizationsEs();
-    case 'fr': return FlutterExtensionLocalizationsFr();
-    case 'id': return FlutterExtensionLocalizationsId();
-    case 'it': return FlutterExtensionLocalizationsIt();
-    case 'ja': return FlutterExtensionLocalizationsJa();
-    case 'ko': return FlutterExtensionLocalizationsKo();
-    case 'pt': return FlutterExtensionLocalizationsPt();
-    case 'ru': return FlutterExtensionLocalizationsRu();
-    case 'zh': return FlutterExtensionLocalizationsZh();
+    case 'en': return FlutterExtensionzLocalizationsEn();
+    case 'es': return FlutterExtensionzLocalizationsEs();
+    case 'fr': return FlutterExtensionzLocalizationsFr();
+    case 'id': return FlutterExtensionzLocalizationsId();
+    case 'it': return FlutterExtensionzLocalizationsIt();
+    case 'ja': return FlutterExtensionzLocalizationsJa();
+    case 'ko': return FlutterExtensionzLocalizationsKo();
+    case 'pt': return FlutterExtensionzLocalizationsPt();
+    case 'ru': return FlutterExtensionzLocalizationsRu();
+    case 'zh': return FlutterExtensionzLocalizationsZh();
   }
 
   throw FlutterError(
-    'FlutterExtensionLocalizations.delegate failed to load unsupported locale "$locale". This is likely '
+    'FlutterExtensionzLocalizations.delegate failed to load unsupported locale "$locale". This is likely '
     'an issue with the localizations generation tool. Please file an issue '
     'on GitHub with a reproducible sample app and the gen-l10n configuration '
     'that was used.'

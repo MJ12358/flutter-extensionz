@@ -1,8 +1,8 @@
-import 'flutter_extension_localizations.dart';
+import 'flutter_extensionz_localizations.dart';
 
 /// The translations for Korean (`ko`).
-class FlutterExtensionLocalizationsKo extends FlutterExtensionLocalizations {
-  FlutterExtensionLocalizationsKo([String locale = 'ko']) : super(locale);
+class FlutterExtensionzLocalizationsKo extends FlutterExtensionzLocalizations {
+  FlutterExtensionzLocalizationsKo([String locale = 'ko']) : super(locale);
 
   @override
   String get accept => '수용하다';

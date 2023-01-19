@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_extensions/flutter_extensions.dart';
+import 'package:flutter_extensionz/flutter_extensionz.dart';
 
 extension ScaffoldMessengerExtension on BuildContext {
   ScaffoldMessengerState get scaffoldMessenger => ScaffoldMessenger.of(this);
@@ -9,18 +9,18 @@ extension ScaffoldMessengerExtension on BuildContext {
   /// Wraps the [ScaffoldMessenger.showMaterialBanner] method
   ///
   void showMaterialBanner(
-    String text, {
+    Widget content, {
     Widget icon = const Icon(Icons.info),
   }) {
     scaffoldMessenger
       ..hideCurrentMaterialBanner()
       ..showMaterialBanner(
         MaterialBanner(
-          content: Text(text),
+          content: content,
           leading: icon,
           actions: <Widget>[
             TextButton(
-              child: Text(fl10n.dismiss),
+              child: Text(_l10n.dismiss),
               onPressed: () => scaffoldMessenger.hideCurrentMaterialBanner(),
             ),
           ],
@@ -39,7 +39,7 @@ extension ScaffoldMessengerExtension on BuildContext {
   /// Wraps the [ScaffoldMessenger.showSnackBar] method
   ///
   void showSnackBar(
-    String text, {
+    Widget content, {
     SnackBarAction? action,
     int? duration,
   }) {
@@ -47,11 +47,11 @@ extension ScaffoldMessengerExtension on BuildContext {
       ..hideCurrentSnackBar()
       ..showSnackBar(
         SnackBar(
-          content: Text(text),
+          content: content,
           duration: Duration(seconds: kDebugMode ? 90 : duration ?? 10),
           action: action ??
               SnackBarAction(
-                label: fl10n.dismiss,
+                label: _l10n.dismiss,
                 onPressed: () => scaffoldMessenger.hideCurrentSnackBar(),
               ),
         ),

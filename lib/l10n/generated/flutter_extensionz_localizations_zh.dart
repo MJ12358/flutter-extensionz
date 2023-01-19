@@ -1,8 +1,8 @@
-import 'flutter_extension_localizations.dart';
+import 'flutter_extensionz_localizations.dart';
 
 /// The translations for Chinese (`zh`).
-class FlutterExtensionLocalizationsZh extends FlutterExtensionLocalizations {
-  FlutterExtensionLocalizationsZh([String locale = 'zh']) : super(locale);
+class FlutterExtensionzLocalizationsZh extends FlutterExtensionzLocalizations {
+  FlutterExtensionzLocalizationsZh([String locale = 'zh']) : super(locale);
 
   @override
   String get accept => '接受';

@@ -1,8 +1,8 @@
-import 'flutter_extension_localizations.dart';
+import 'flutter_extensionz_localizations.dart';
 
 /// The translations for Italian (`it`).
-class FlutterExtensionLocalizationsIt extends FlutterExtensionLocalizations {
-  FlutterExtensionLocalizationsIt([String locale = 'it']) : super(locale);
+class FlutterExtensionzLocalizationsIt extends FlutterExtensionzLocalizations {
+  FlutterExtensionzLocalizationsIt([String locale = 'it']) : super(locale);
 
   @override
   String get accept => 'Accettare';

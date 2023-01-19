@@ -1,18 +1,17 @@
-# Flutter Extensions
+# Flutter Extensionz
 
 ## Getting started
 
 Add this to your `pubspec.yaml` under `dependencies`
 
 ```yaml
-flutter_extensions:
-  git: https://github.com/mj12358/flutter-extensions
+flutter_extensionz: ^1.0.0
 ```
 
 ## Usage
 
 ```dart
-import 'package:flutter_extensions/flutter_extensions.dart';
+import 'package:flutter_extensionz/flutter_extensionz.dart';
 
-context.showSnackBar('The snack bar text');
+context.showSnackBar(Text('The snack bar text'));
 ```

@@ -1,8 +1,8 @@
-import 'flutter_extension_localizations.dart';
+import 'flutter_extensionz_localizations.dart';
 
 /// The translations for Russian (`ru`).
-class FlutterExtensionLocalizationsRu extends FlutterExtensionLocalizations {
-  FlutterExtensionLocalizationsRu([String locale = 'ru']) : super(locale);
+class FlutterExtensionzLocalizationsRu extends FlutterExtensionzLocalizations {
+  FlutterExtensionzLocalizationsRu([String locale = 'ru']) : super(locale);
 
   @override
   String get accept => 'Принимать';

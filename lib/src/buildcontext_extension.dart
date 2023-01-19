@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_extensions/flutter_extensions.dart';
+import 'package:flutter/material.dart' hide showDatePicker;
+import 'package:flutter/material.dart' as date_picker show showDatePicker;
+import 'package:flutter_extensionz/flutter_extensionz.dart';
 
 extension BuildContextExtension on BuildContext {
   ///
@@ -16,20 +17,20 @@ extension BuildContextExtension on BuildContext {
       builder: (BuildContext context) {
         return AlertDialog(
           title: Text(
-            title ?? fl10n.confirm,
+            title ?? _l10n.confirm,
           ),
           content: content,
           actions: <Widget>[
             TextButton(
               onPressed: () => context.pop(false),
               child: Text(
-                cancelText ?? fl10n.cancel,
+                cancelText ?? _l10n.cancel,
               ),
             ),
             TextButton(
               onPressed: () => context.pop(true),
               child: Text(
-                confirmText ?? fl10n.accept,
+                confirmText ?? _l10n.accept,
               ),
             ),
           ],
@@ -77,16 +78,22 @@ extension BuildContextExtension on BuildContext {
   ///
   /// Wraps the [showDatePicker] method
   ///
-  Future<DateTime?> showCalendar({
-    DateTime? firstDate,
+  Future<DateTime?> showDatePicker({
     DateTime? initialDate,
+    DateTime? firstDate,
     DateTime? lastDate,
+    DateTime? currentDate,
+    DatePickerEntryMode entryMode = DatePickerEntryMode.calendar,
+    DatePickerMode pickerMode = DatePickerMode.day,
   }) {
-    return showDatePicker(
+    return date_picker.showDatePicker(
       context: this,
-      firstDate: firstDate ?? DateTime.now(),
       initialDate: initialDate ?? DateTime.now(),
+      firstDate: firstDate ?? DateTime.now(),
       lastDate: lastDate ?? DateTime.now().add(const Duration(days: 365)),
+      currentDate: currentDate,
+      initialEntryMode: entryMode,
+      initialDatePickerMode: pickerMode,
     );
   }
 }

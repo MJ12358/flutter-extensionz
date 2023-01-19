@@ -1,33 +1,32 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_extensions/l10n/generated/flutter_extension_localizations.dart';
+import 'package:flutter_extensionz/flutter_extensionz.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:intl/intl.dart';
 
 extension LocalizationExtension on BuildContext {
-  AppLocalizations get localizations => AppLocalizations.of(this)!;
+  AppLocalizations get l10n => AppLocalizations.of(this)!;
 
-  FlutterExtensionLocalizations get fl10n =>
-      FlutterExtensionLocalizations.of(this)!;
+  FlutterExtensionzLocalizations get _l10n =>
+      FlutterExtensionzLocalizations.of(this);
 
   ///
   /// Get localized currency symbol
   ///
   String get currencySymbol {
     final NumberFormat format =
-        NumberFormat.simpleCurrency(locale: fl10n.localeName);
+        NumberFormat.simpleCurrency(locale: _l10n.localeName);
     return format.currencySymbol;
   }
 
   ///
   /// Get localized date
   ///
-  String formatDate(DateTime? value) {
+  String formatDate(DateTime? value, [String format = 'MM/dd/yyyy']) {
     if (value == null) {
       return '';
     }
 
-    // DateFormat.MEd(_l10n.localeName).format(value);
-    final DateFormat dateFormat = DateFormat('MM/dd/yyyy', fl10n.localeName);
+    final DateFormat dateFormat = DateFormat(format, _l10n.localeName);
     return dateFormat.format(value);
   }
 
@@ -40,7 +39,7 @@ extension LocalizationExtension on BuildContext {
     }
 
     final NumberFormat numberFormat =
-        NumberFormat.decimalPattern(fl10n.localeName);
+        NumberFormat.decimalPattern(_l10n.localeName);
     return numberFormat.format(value);
   }
 
@@ -53,7 +52,7 @@ extension LocalizationExtension on BuildContext {
     }
 
     final NumberFormat numberFormat =
-        NumberFormat.percentPattern(fl10n.localeName);
+        NumberFormat.percentPattern(_l10n.localeName);
     return numberFormat.format(value);
   }
 }

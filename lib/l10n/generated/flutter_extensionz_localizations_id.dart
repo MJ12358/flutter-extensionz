@@ -1,8 +1,8 @@
-import 'flutter_extension_localizations.dart';
+import 'flutter_extensionz_localizations.dart';
 
 /// The translations for Indonesian (`id`).
-class FlutterExtensionLocalizationsId extends FlutterExtensionLocalizations {
-  FlutterExtensionLocalizationsId([String locale = 'id']) : super(locale);
+class FlutterExtensionzLocalizationsId extends FlutterExtensionzLocalizations {
+  FlutterExtensionzLocalizationsId([String locale = 'id']) : super(locale);
 
   @override
   String get accept => 'Menerima';

@@ -1,8 +1,8 @@
-import 'flutter_extension_localizations.dart';
+import 'flutter_extensionz_localizations.dart';
 
 /// The translations for English (`en`).
-class FlutterExtensionLocalizationsEn extends FlutterExtensionLocalizations {
-  FlutterExtensionLocalizationsEn([String locale = 'en']) : super(locale);
+class FlutterExtensionzLocalizationsEn extends FlutterExtensionzLocalizations {
+  FlutterExtensionzLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
   String get accept => 'Accept';
