@@ -1,5 +1,7 @@
 # Flutter Extensionz
 
+A set of [Flutter](https://flutter.dev) extensions I use in various projects.
+
 ## Getting started
 
 Add this to your `pubspec.yaml` under `dependencies`
