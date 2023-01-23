@@ -20,7 +20,7 @@ extension ScaffoldMessengerExtension on BuildContext {
           leading: icon,
           actions: <Widget>[
             TextButton(
-              child: Text(_l10n.dismiss),
+              child: Text(flutterExtensionzLocalizations.dismiss),
               onPressed: () => scaffoldMessenger.hideCurrentMaterialBanner(),
             ),
           ],
@@ -51,7 +51,7 @@ extension ScaffoldMessengerExtension on BuildContext {
           duration: Duration(seconds: kDebugMode ? 90 : duration ?? 10),
           action: action ??
               SnackBarAction(
-                label: _l10n.dismiss,
+                label: flutterExtensionzLocalizations.dismiss,
                 onPressed: () => scaffoldMessenger.hideCurrentSnackBar(),
               ),
         ),
