@@ -36,7 +36,7 @@ extension MediaQueryExtension on BuildContext {
 
   double widthTransformer({
     double dividedBy = 1.0,
-    reducedBy = 0.0,
+    double reducedBy = 0.0,
   }) {
     return (width - ((width / 100) * reducedBy)) / dividedBy;
   }

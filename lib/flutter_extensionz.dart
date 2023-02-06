@@ -8,4 +8,5 @@ export 'src/modal_route_extension.dart';
 export 'src/navigator_extension.dart';
 export 'src/scaffold_extension.dart';
 export 'src/scaffold_messanger_extension.dart';
+export 'src/string_extension.dart';
 export 'src/theme_extension.dart';

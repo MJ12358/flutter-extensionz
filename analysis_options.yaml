@@ -1,3 +1,5 @@
-include: package:flutter_lints/flutter.yaml
-# Additional information about this file can be found at
-# https://dart.dev/guides/language/analysis-options
+include: package:dart_lintz/dart_lintz.yaml
+
+analyzer:
+  exclude:
+    - "lib/l10n/generated/**"

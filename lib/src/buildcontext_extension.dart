@@ -4,7 +4,7 @@ import 'package:flutter_extensionz/flutter_extensionz.dart';
 
 extension BuildContextExtension on BuildContext {
   ///
-  /// Wraps the [showDialog] method and builds an [AlertDialog]
+  /// Wraps the `showDialog` method and builds an `AlertDialog`
   ///
   Future<bool> showAlertDialog(
     Widget content, {
@@ -40,7 +40,7 @@ extension BuildContextExtension on BuildContext {
   }
 
   ///
-  /// Wraps the [showDialog] method and builds a [SimpleDialog]
+  /// Wraps the `showDialog` method and builds a `SimpleDialog`
   ///
   Future<T?> showSimpleDialog<T>({
     required Widget title,
@@ -58,7 +58,7 @@ extension BuildContextExtension on BuildContext {
   }
 
   ///
-  /// Wraps the [showModalBottomSheet] method
+  /// Wraps the `showModalBottomSheet` method
   ///
   Future<T?> showBottomSheet<T>({
     required Widget child,
@@ -76,7 +76,7 @@ extension BuildContextExtension on BuildContext {
   }
 
   ///
-  /// Wraps the [showDatePicker] method
+  /// Wraps the `showDatePicker` method
   ///
   Future<DateTime?> showDatePicker({
     DateTime? initialDate,

@@ -6,7 +6,7 @@ extension ScaffoldMessengerExtension on BuildContext {
   ScaffoldMessengerState get scaffoldMessenger => ScaffoldMessenger.of(this);
 
   ///
-  /// Wraps the [ScaffoldMessenger.showMaterialBanner] method
+  /// Wraps the `ScaffoldMessenger.showMaterialBanner` method
   ///
   void showMaterialBanner(
     Widget content, {
@@ -29,14 +29,14 @@ extension ScaffoldMessengerExtension on BuildContext {
   }
 
   ///
-  /// Wraps the [ScaffoldMessenger.clearMaterialBanners] method
+  /// Wraps the `ScaffoldMessenger.clearMaterialBanners` method
   ///
   void closeMaterialBanner() {
     scaffoldMessenger.clearMaterialBanners();
   }
 
   ///
-  /// Wraps the [ScaffoldMessenger.showSnackBar] method
+  /// Wraps the `ScaffoldMessenger.showSnackBar` method
   ///
   void showSnackBar(
     Widget content, {
@@ -59,7 +59,7 @@ extension ScaffoldMessengerExtension on BuildContext {
   }
 
   ///
-  /// Wraps the [ScaffoldMessenger.clearSnackBars] method
+  /// Wraps the `ScaffoldMessenger.clearSnackBars` method
   ///
   void closeSnackBar() {
     scaffoldMessenger.clearSnackBars();
