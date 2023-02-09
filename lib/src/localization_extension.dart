@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_extensionz/flutter_extensionz.dart';
-import 'package:intl/intl.dart';
+part of '../flutter_extensionz.dart';
 
 extension LocalizationExtension on BuildContext {
   FlutterExtensionzLocalizations get flutterExtensionzLocalizations =>

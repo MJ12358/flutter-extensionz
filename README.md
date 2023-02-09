@@ -2,14 +2,6 @@
 
 A set of [Flutter](https://flutter.dev) extensions I use in various projects.
 
-## Getting started
-
-Add this to your `pubspec.yaml` under `dependencies`
-
-```yaml
-flutter_extensionz: ^1.0.3
-```
-
 ## Usage
 
 ```dart

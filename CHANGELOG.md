@@ -1,5 +1,9 @@
 # Flutter Extensionz
 
+## 2.0.0
+
+- Ensure only the `flutter_extensionz.dart` file can be imported.
+
 ## 1.0.3
 
 - Use new lint rules.

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+part of '../flutter_extensionz.dart';
 
 extension ThemeExtension on BuildContext {
   ThemeData get theme => Theme.of(this);

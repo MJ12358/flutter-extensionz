@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart' hide showDatePicker;
-import 'package:flutter/material.dart' as date_picker show showDatePicker;
-import 'package:flutter_extensionz/flutter_extensionz.dart';
+part of '../flutter_extensionz.dart';
 
 extension BuildContextExtension on BuildContext {
   ///

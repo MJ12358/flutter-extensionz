@@ -1,12 +1,19 @@
-export 'l10n/generated/flutter_extensionz_localizations.dart';
-export 'src/buildcontext_extension.dart';
-export 'src/color_extension.dart';
-export 'src/focus_scope_extension.dart';
-export 'src/localization_extension.dart';
-export 'src/media_query_extension.dart';
-export 'src/modal_route_extension.dart';
-export 'src/navigator_extension.dart';
-export 'src/scaffold_extension.dart';
-export 'src/scaffold_messanger_extension.dart';
-export 'src/string_extension.dart';
-export 'src/theme_extension.dart';
+import 'dart:math' as math;
+
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart' hide showDatePicker;
+import 'package:flutter/material.dart' as date_picker show showDatePicker;
+import 'package:flutter_extensionz/l10n/generated/flutter_extensionz_localizations.dart';
+import 'package:intl/intl.dart';
+
+part 'src/buildcontext_extension.dart';
+part 'src/color_extension.dart';
+part 'src/focus_scope_extension.dart';
+part 'src/localization_extension.dart';
+part 'src/media_query_extension.dart';
+part 'src/modal_route_extension.dart';
+part 'src/navigator_extension.dart';
+part 'src/scaffold_extension.dart';
+part 'src/scaffold_messanger_extension.dart';
+part 'src/string_extension.dart';
+part 'src/theme_extension.dart';

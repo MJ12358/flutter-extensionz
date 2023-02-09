@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+part of '../flutter_extensionz.dart';
 
 extension ScaffoldExtension on BuildContext {
   ScaffoldState get scaffold => Scaffold.of(this);

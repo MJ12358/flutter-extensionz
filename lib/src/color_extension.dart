@@ -1,8 +1,7 @@
-import 'dart:math';
-
-import 'package:flutter/material.dart';
+part of '../flutter_extensionz.dart';
 
 extension ColorExtension on Color {
+  /// Determine if a color is `light` or `dark`
   Brightness get brightness {
     final double relativeLuminance = computeLuminance();
     const double threshold = 0.45;
@@ -12,10 +11,12 @@ extension ColorExtension on Color {
     return Brightness.dark;
   }
 
+  /// Get black or white based on the brightnes of this color
   Color get blackOrWhite {
     return brightness == Brightness.dark ? Colors.white : Colors.black;
   }
 
+  /// Darken a color by [amount]
   Color darken([double amount = 0.1]) {
     final HSLColor hsl = HSLColor.fromColor(this);
     final HSLColor hslDark =
@@ -23,6 +24,7 @@ extension ColorExtension on Color {
     return hslDark.toColor();
   }
 
+  /// Lighten a color by [amount]
   Color lighten([double amount = 0.1]) {
     final HSLColor hsl = HSLColor.fromColor(this);
     final HSLColor hslLight =
@@ -37,7 +39,7 @@ extension ColorExtension on Color {
     if (value >= 1) {
       return materialColor[900]!;
     }
-    final num mod = pow(10.0, 1);
+    final num mod = math.pow(10.0, 1);
     final int shade = (value * mod).round() * 1000;
     return materialColor[shade ~/ mod]!;
   }
@@ -66,6 +68,7 @@ extension ColorExtension on Color {
     return MaterialColor(value, swatch);
   }
 
+  /// Get the complimentary color of this
   Color get complimentary {
     final HSLColor hsl = HSLColor.fromColor(this);
     double hue = hsl.hue + 180;
@@ -80,6 +83,9 @@ extension ColorExtension on Color {
     ).toColor();
   }
 
+  /// Get the name of this color
+  ///
+  /// Only material colors are supported
   String get name {
     final Map<String, Color> colorMap = <String, Color>{
       'Red': Colors.red,
@@ -109,8 +115,9 @@ extension ColorExtension on Color {
     return 'Unknown';
   }
 
+  /// Get a random color
   static Color get random {
-    final Random random = Random();
+    final math.Random random = math.Random();
     final int i = 1 + random.nextInt(Colors.primaries.length - 1);
     return Colors.primaries[i];
   }

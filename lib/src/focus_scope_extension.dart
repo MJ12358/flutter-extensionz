@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+part of '../flutter_extensionz.dart';
 
 extension FocusScopeExtension on BuildContext {
   FocusScopeNode get focusScope => FocusScope.of(this);

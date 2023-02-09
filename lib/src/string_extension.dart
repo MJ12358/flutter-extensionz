@@ -1,6 +1,9 @@
-import 'package:flutter/material.dart';
+part of '../flutter_extensionz.dart';
 
 extension StringExtension on String {
+  /// Convert this string into a Color
+  ///
+  /// Only hex strings currently supported
   Color? toColor() {
     if (trim().isEmpty) {
       return null;

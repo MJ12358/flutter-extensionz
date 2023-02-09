@@ -1,6 +1,4 @@
-import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_extensionz/flutter_extensionz.dart';
+part of '../flutter_extensionz.dart';
 
 extension ScaffoldMessengerExtension on BuildContext {
   ScaffoldMessengerState get scaffoldMessenger => ScaffoldMessenger.of(this);
