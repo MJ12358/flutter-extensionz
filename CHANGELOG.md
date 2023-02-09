@@ -2,7 +2,7 @@
 
 ## 2.0.1
 
-- Bug fix.
+- Bug fix and modify example.
 
 ## 2.0.0
 
