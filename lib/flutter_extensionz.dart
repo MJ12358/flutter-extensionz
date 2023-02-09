@@ -6,6 +6,8 @@ import 'package:flutter/material.dart' as date_picker show showDatePicker;
 import 'package:flutter_extensionz/l10n/generated/flutter_extensionz_localizations.dart';
 import 'package:intl/intl.dart';
 
+export 'package:flutter_extensionz/l10n/generated/flutter_extensionz_localizations.dart';
+
 part 'src/buildcontext_extension.dart';
 part 'src/color_extension.dart';
 part 'src/focus_scope_extension.dart';
