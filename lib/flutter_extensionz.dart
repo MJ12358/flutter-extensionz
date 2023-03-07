@@ -1,3 +1,5 @@
+library flutter_extensionz;
+
 import 'dart:math' as math;
 
 import 'package:flutter/foundation.dart';
@@ -6,7 +8,8 @@ import 'package:flutter/material.dart' as date_picker show showDatePicker;
 import 'package:flutter_extensionz/l10n/generated/flutter_extensionz_localizations.dart';
 import 'package:intl/intl.dart';
 
-export 'package:flutter_extensionz/l10n/generated/flutter_extensionz_localizations.dart';
+export 'package:flutter_extensionz/l10n/generated/flutter_extensionz_localizations.dart'
+    show FlutterExtensionzLocalizations;
 
 part 'src/buildcontext_extension.dart';
 part 'src/color_extension.dart';

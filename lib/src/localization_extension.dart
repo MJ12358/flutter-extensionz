@@ -1,12 +1,12 @@
-part of '../flutter_extensionz.dart';
+part of flutter_extensionz;
 
 extension LocalizationExtension on BuildContext {
   FlutterExtensionzLocalizations get flutterExtensionzLocalizations =>
       FlutterExtensionzLocalizations.of(this);
 
+  /// Get localized currency symbol.
   ///
-  /// Get localized currency symbol
-  ///
+  /// This uses `Intl.NumberFormat.simpleCurrency`.
   String get currencySymbol {
     final NumberFormat format = NumberFormat.simpleCurrency(
       locale: flutterExtensionzLocalizations.localeName,
@@ -14,10 +14,27 @@ extension LocalizationExtension on BuildContext {
     return format.currencySymbol;
   }
 
+  /// Get localized currency.
   ///
-  /// Get localized date
+  /// This uses `Intl.NumberFormat.simpleCurrency`.
+  String formatCurrency(Object? value) {
+    if (value == null) {
+      return '';
+    }
+
+    final NumberFormat numberFormat = NumberFormat.simpleCurrency(
+      locale: flutterExtensionzLocalizations.localeName,
+    );
+    return numberFormat.format(value);
+  }
+
+  /// Get localized date.
   ///
-  String formatDate(DateTime? value, [String format = 'MM/dd/yyyy']) {
+  /// This uses `Intl.DateFormat`.
+  String formatDate(
+    DateTime? value, [
+    String format = 'MM/dd/yyyy',
+  ]) {
     if (value == null) {
       return '';
     }
@@ -29,10 +46,10 @@ extension LocalizationExtension on BuildContext {
     return dateFormat.format(value);
   }
 
+  /// Get localized number.
   ///
-  /// Get localized number
-  ///
-  String formatNumber(num? value) {
+  /// This uses `Intl.NumberFormat.decimalPattern`.
+  String formatNumber(Object? value) {
     if (value == null) {
       return '';
     }
@@ -43,10 +60,10 @@ extension LocalizationExtension on BuildContext {
     return numberFormat.format(value);
   }
 
+  /// Get localized percent.
   ///
-  /// Get localized percent
-  ///
-  String formatPercent(num? value) {
+  /// This uses `Intl.NumberFormat.percentPattern`.
+  String formatPercent(Object? value) {
     if (value == null) {
       return '';
     }

@@ -1,12 +1,12 @@
-part of '../flutter_extensionz.dart';
+part of flutter_extensionz;
 
 extension StringExtension on String {
-  /// Convert this string into a Color
+  /// Convert this string into a Color.
   ///
-  /// Only hex strings currently supported
-  Color? toColor() {
+  /// Only hex strings currently supported.
+  Color? toColor([Color? fallback]) {
     if (trim().isEmpty) {
-      return null;
+      return fallback;
     }
 
     final StringBuffer buffer = StringBuffer();
@@ -20,7 +20,7 @@ extension StringExtension on String {
     final int? value = int.tryParse(buffer.toString(), radix: 16);
 
     if (value == null) {
-      return null;
+      return fallback;
     }
 
     return Color(value);

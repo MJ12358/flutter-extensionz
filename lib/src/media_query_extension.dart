@@ -1,6 +1,7 @@
-part of '../flutter_extensionz.dart';
+part of flutter_extensionz;
 
 extension MediaQueryExtension on BuildContext {
+  /// Equivalent to `MediaQuery.of(context)`.
   MediaQueryData get mediaQuery => MediaQuery.of(this);
 
   Size get deviceSize => mediaQuery.size;

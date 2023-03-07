@@ -9,3 +9,5 @@ import 'package:flutter_extensionz/flutter_extensionz.dart';
 
 context.showSnackBar(Text('The snack bar text'));
 ```
+
+The [generated documentation](https://pub.dev/documentation/flutter_extensionz/latest/flutter_extensionz/flutter_extensionz-library.html) will give you a great overview of all that is available.

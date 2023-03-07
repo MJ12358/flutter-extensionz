@@ -10,5 +10,8 @@ void main() {
     expect(Colors.white, '#ffffff'.toColor());
     expect(null, ''.toColor());
     expect(null, 'not a color'.toColor());
+    expect(Colors.black, ''.toColor(Colors.black));
+    expect(Colors.white, ''.toColor(Colors.white));
+    expect(Colors.white, 'not a color'.toColor(Colors.white));
   });
 }

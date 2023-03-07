@@ -1,7 +1,7 @@
-part of '../flutter_extensionz.dart';
+part of flutter_extensionz;
 
 extension ColorExtension on Color {
-  /// Determine if a color is `light` or `dark`
+  /// Determine if a color is `light` or `dark`.
   Brightness get brightness {
     final double relativeLuminance = computeLuminance();
     const double threshold = 0.45;
@@ -11,12 +11,12 @@ extension ColorExtension on Color {
     return Brightness.dark;
   }
 
-  /// Get black or white based on the brightnes of this color
+  /// Get black or white based on the brightness of this color.
   Color get blackOrWhite {
     return brightness == Brightness.dark ? Colors.white : Colors.black;
   }
 
-  /// Darken a color by [amount]
+  /// Darken a color by [amount].
   Color darken([double amount = 0.1]) {
     final HSLColor hsl = HSLColor.fromColor(this);
     final HSLColor hslDark =
@@ -24,7 +24,7 @@ extension ColorExtension on Color {
     return hslDark.toColor();
   }
 
-  /// Lighten a color by [amount]
+  /// Lighten a color by [amount].
   Color lighten([double amount = 0.1]) {
     final HSLColor hsl = HSLColor.fromColor(this);
     final HSLColor hslLight =
@@ -68,7 +68,7 @@ extension ColorExtension on Color {
     return MaterialColor(value, swatch);
   }
 
-  /// Get the complimentary color of this
+  /// Get the complimentary color of this color.
   Color get complimentary {
     final HSLColor hsl = HSLColor.fromColor(this);
     double hue = hsl.hue + 180;
@@ -83,9 +83,9 @@ extension ColorExtension on Color {
     ).toColor();
   }
 
-  /// Get the name of this color
+  /// Get the name of this color.
   ///
-  /// Only material colors are supported
+  /// Only material colors are supported.
   String get name {
     final Map<String, Color> colorMap = <String, Color>{
       'Red': Colors.red,
@@ -106,6 +106,9 @@ extension ColorExtension on Color {
       'Deep Orange': Colors.deepOrange,
       'Brown': Colors.brown,
       'Blue Grey': Colors.blueGrey,
+      'White': Colors.white,
+      'Black': Colors.black,
+      'Transparent': Colors.transparent,
     };
     for (final String key in colorMap.keys) {
       if (colorMap[key]?.value == value) {
@@ -115,7 +118,7 @@ extension ColorExtension on Color {
     return 'Unknown';
   }
 
-  /// Get a random color
+  /// Get a random color from `Colors.primaries`.
   static Color get random {
     final math.Random random = math.Random();
     final int i = 1 + random.nextInt(Colors.primaries.length - 1);
