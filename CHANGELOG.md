@@ -1,5 +1,10 @@
 # Flutter Extensionz
 
+## 2.1.0
+
+- Add currency formatter.
+- Update comments.
+
 ## 2.0.1
 
 - Bug fix and modify example.
