@@ -1,5 +1,10 @@
 # Flutter Extensionz
 
+## 3.0.0
+
+- BREAKING:
+- Remove dependency on baked in localizations in favor of user provided ones.
+
 ## 2.2.0
 
 - Add `TextEditingControllerExtension`.

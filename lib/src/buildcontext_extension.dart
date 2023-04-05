@@ -4,30 +4,24 @@ extension BuildContextExtension on BuildContext {
   /// Wraps the `showDialog` method and builds an `AlertDialog`.
   Future<bool> showAlertDialog(
     Widget content, {
-    String? title,
-    String? cancelText,
-    String? confirmText,
+    String title = 'Confirm',
+    String cancelText = 'Cancel',
+    String acceptText = 'Accept',
   }) async {
     return await showDialog(
       context: this,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text(
-            title ?? flutterExtensionzLocalizations.confirm,
-          ),
+          title: Text(title),
           content: content,
           actions: <Widget>[
             TextButton(
               onPressed: () => context.pop(false),
-              child: Text(
-                cancelText ?? flutterExtensionzLocalizations.cancel,
-              ),
+              child: Text(cancelText),
             ),
             TextButton(
               onPressed: () => context.pop(true),
-              child: Text(
-                confirmText ?? flutterExtensionzLocalizations.accept,
-              ),
+              child: Text(acceptText),
             ),
           ],
         );

@@ -1,6 +1,6 @@
 name: flutter_extensionz
 description: A set of Flutter extensions I use in various projects. Including BuildContext, Color extensions and more.
-version: 2.2.0
+version: 3.0.0
 repository: https://github.com/mj12358/flutter-extensions
 
 environment:
@@ -10,15 +10,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_localizations:
-    sdk: flutter
   intl: ^0.17.0
 
 dev_dependencies:
   dart_lintz: ^1.0.0
   flutter_test:
     sdk: flutter
-
-flutter:
-  # Enable generation of localized Strings from arb files.
-  generate: true
+  mocktail: ^0.3.0

@@ -9,6 +9,7 @@ extension ScaffoldMessengerExtension on BuildContext {
   void showMaterialBanner(
     Widget content, {
     Widget icon = const Icon(Icons.info),
+    String dismissText = 'Dismiss',
   }) {
     scaffoldMessenger
       ..hideCurrentMaterialBanner()
@@ -18,7 +19,7 @@ extension ScaffoldMessengerExtension on BuildContext {
           leading: icon,
           actions: <Widget>[
             TextButton(
-              child: Text(flutterExtensionzLocalizations.dismiss),
+              child: Text(dismissText),
               onPressed: () => scaffoldMessenger.hideCurrentMaterialBanner(),
             ),
           ],
@@ -37,17 +38,18 @@ extension ScaffoldMessengerExtension on BuildContext {
   void showSnackBar(
     Widget content, {
     SnackBarAction? action,
-    int? duration,
+    int duration = 10,
+    String dismissText = 'Dismiss',
   }) {
     scaffoldMessenger
       ..hideCurrentSnackBar()
       ..showSnackBar(
         SnackBar(
           content: content,
-          duration: Duration(seconds: kDebugMode ? 90 : duration ?? 10),
+          duration: Duration(seconds: kDebugMode ? 90 : duration),
           action: action ??
               SnackBarAction(
-                label: flutterExtensionzLocalizations.dismiss,
+                label: dismissText,
                 onPressed: () => scaffoldMessenger.hideCurrentSnackBar(),
               ),
         ),

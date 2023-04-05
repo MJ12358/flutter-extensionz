@@ -1,7 +1,0 @@
-synthetic-package: false
-output-dir: lib/l10n/generated
-arb-dir: lib/l10n
-template-arb-file: app_en.arb
-output-localization-file: flutter_extensionz_localizations.dart
-output-class: FlutterExtensionzLocalizations
-nullable-getter: false

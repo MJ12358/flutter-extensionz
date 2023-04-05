@@ -1,15 +1,12 @@
 part of flutter_extensionz;
 
 extension LocalizationExtension on BuildContext {
-  FlutterExtensionzLocalizations get flutterExtensionzLocalizations =>
-      FlutterExtensionzLocalizations.of(this);
-
   /// Get localized currency symbol.
   ///
   /// This uses `Intl.NumberFormat.simpleCurrency`.
   String get currencySymbol {
     final NumberFormat format = NumberFormat.simpleCurrency(
-      locale: flutterExtensionzLocalizations.localeName,
+      locale: Platform.localeName,
     );
     return format.currencySymbol;
   }
@@ -23,7 +20,7 @@ extension LocalizationExtension on BuildContext {
     }
 
     final NumberFormat numberFormat = NumberFormat.simpleCurrency(
-      locale: flutterExtensionzLocalizations.localeName,
+      locale: Platform.localeName,
     );
     return numberFormat.format(value);
   }
@@ -41,7 +38,7 @@ extension LocalizationExtension on BuildContext {
 
     final DateFormat dateFormat = DateFormat(
       format,
-      flutterExtensionzLocalizations.localeName,
+      Platform.localeName,
     );
     return dateFormat.format(value);
   }
@@ -55,7 +52,7 @@ extension LocalizationExtension on BuildContext {
     }
 
     final NumberFormat numberFormat = NumberFormat.decimalPattern(
-      flutterExtensionzLocalizations.localeName,
+      Platform.localeName,
     );
     return numberFormat.format(value);
   }
@@ -69,7 +66,7 @@ extension LocalizationExtension on BuildContext {
     }
 
     final NumberFormat numberFormat = NumberFormat.percentPattern(
-      flutterExtensionzLocalizations.localeName,
+      Platform.localeName,
     );
     return numberFormat.format(value);
   }
