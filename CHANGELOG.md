@@ -1,5 +1,9 @@
 # Flutter Extensionz
 
+## 3.0.1
+
+- Add "safe" navigators.
+
 ## 3.0.0
 
 - BREAKING:

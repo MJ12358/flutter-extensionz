@@ -44,4 +44,36 @@ extension NavigatorExtension on BuildContext {
       (Route<dynamic> route) => false,
     );
   }
+
+  void safePush(Widget page) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) {
+        push(page);
+      }
+    });
+  }
+
+  void safePop([Object? result]) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) {
+        pop(result);
+      }
+    });
+  }
+
+  void safePushReplacement(Widget page) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) {
+        pushReplacement(page);
+      }
+    });
+  }
+
+  void safePushAndRemove(Widget page) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) {
+        pushAndRemove(page);
+      }
+    });
+  }
 }
