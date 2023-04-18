@@ -1,5 +1,9 @@
 # Flutter Extensionz
 
+## 3.0.2
+
+- Add fullscreenDialog option to "push" navigator.
+
 ## 3.0.1
 
 - Add "safe" navigators.

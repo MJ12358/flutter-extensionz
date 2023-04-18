@@ -5,11 +5,16 @@ extension NavigatorExtension on BuildContext {
   NavigatorState get navigator => Navigator.of(this);
 
   /// Wraps the `Navigator.push` method.
-  // TODO: allow custom PageRouteBuilder
-  Future<T?> push<T>(Widget page) {
+  Future<T?> push<T>(
+    Widget page, {
+    bool fullscreenDialog = false,
+  }) {
     return Navigator.push(
       this,
-      MaterialPageRoute<T>(builder: (_) => page),
+      MaterialPageRoute<T>(
+        builder: (_) => page,
+        fullscreenDialog: fullscreenDialog,
+      ),
     );
   }
 
