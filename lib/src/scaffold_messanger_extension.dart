@@ -60,4 +60,11 @@ extension ScaffoldMessengerExtension on BuildContext {
   void closeSnackBar() {
     scaffoldMessenger.clearSnackBars();
   }
+
+  /// Close all [ScaffoldMessenger] and drawer.
+  void closeMessengers() {
+    scaffoldMessenger.clearMaterialBanners();
+    scaffoldMessenger.clearSnackBars();
+    scaffold.closeDrawer();
+  }
 }

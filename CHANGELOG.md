@@ -1,5 +1,10 @@
 # Flutter Extensionz
 
+## 3.0.3
+
+- Add `pushRoute` and `popRoute` to navigator.
+- Add `closeMessengers` to scaffold messenger.
+
 ## 3.0.2
 
 - Add fullscreenDialog option to "push" navigator.

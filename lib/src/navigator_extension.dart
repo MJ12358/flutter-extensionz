@@ -1,16 +1,15 @@
 part of flutter_extensionz;
 
 extension NavigatorExtension on BuildContext {
-  /// Equivalent to `Navigator.of(context)`.
+  /// Equivalent to [Navigator.of(context)].
   NavigatorState get navigator => Navigator.of(this);
 
-  /// Wraps the `Navigator.push` method.
+  /// Wraps the [Navigator.push] method.
   Future<T?> push<T>(
     Widget page, {
     bool fullscreenDialog = false,
   }) {
-    return Navigator.push(
-      this,
+    return navigator.push(
       MaterialPageRoute<T>(
         builder: (_) => page,
         fullscreenDialog: fullscreenDialog,
@@ -18,38 +17,50 @@ extension NavigatorExtension on BuildContext {
     );
   }
 
-  /// Wraps the `Navigator.pop` method.
+  Future<T?> pushRoute<T>(PageRouteBuilder<T> route) {
+    return navigator.push(route);
+  }
+
+  void popRoute<T>(PageRouteBuilder<T> route) {
+    navigator.pop(route);
+  }
+
+  /// Wraps the [Navigator.pop] method.
   void pop([Object? result]) {
-    Navigator.pop(this, result);
+    navigator.pop(result);
   }
 
-  /// Wraps the `Navigator.canPop` method.
+  /// Wraps the [Navigator.canPop] method.
   bool canPop() {
-    return Navigator.canPop(this);
+    return navigator.canPop();
   }
 
-  /// Wraps the `Navigator.mabyPop` method.
+  /// Wraps the [Navigator.maybePop] method.
   Future<bool> maybePop<T>([T? result]) {
-    return Navigator.maybePop<T>(this, result);
+    return navigator.maybePop<T>(result);
   }
 
-  /// Wraps the `Navigator.pushReplacement` method.
+  /// Wraps the [Navigator.pushReplacement] method.
   Future<T?> pushReplacement<T>(Widget page) {
-    return Navigator.pushReplacement(
-      this,
-      MaterialPageRoute<T>(builder: (_) => page),
+    return navigator.pushReplacement(
+      MaterialPageRoute<T>(
+        builder: (_) => page,
+      ),
     );
   }
 
-  /// Wraps the `Navigator.pushAndRemoveUntil` method.
+  /// Wraps the [Navigator.pushAndRemoveUntil] method.
   Future<T?> pushAndRemove<T>(Widget page) {
-    return Navigator.pushAndRemoveUntil(
-      this,
-      MaterialPageRoute<T>(builder: (_) => page),
+    return navigator.pushAndRemoveUntil(
+      MaterialPageRoute<T>(
+        builder: (_) => page,
+      ),
       (Route<dynamic> route) => false,
     );
   }
 
+  /// Uses [WidgetsBinding.instance.postFrameCallback] and
+  /// [mounted] to ensure the [page] can be pushed.
   void safePush(Widget page) {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (mounted) {
@@ -58,6 +69,8 @@ extension NavigatorExtension on BuildContext {
     });
   }
 
+  /// Uses [WidgetsBinding.instance.postFrameCallback] and
+  /// [mounted] to ensure the [Navigator] can be popped.
   void safePop([Object? result]) {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (mounted) {
@@ -66,6 +79,8 @@ extension NavigatorExtension on BuildContext {
     });
   }
 
+  /// Uses [WidgetsBinding.instance.postFrameCallback] and
+  /// [mounted] to ensure the [page] can be pushed and replaced.
   void safePushReplacement(Widget page) {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (mounted) {
@@ -74,6 +89,8 @@ extension NavigatorExtension on BuildContext {
     });
   }
 
+  /// Uses [WidgetsBinding.instance.postFrameCallback] and
+  /// [mounted] to ensure the [page] can be pushed and removed.
   void safePushAndRemove(Widget page) {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (mounted) {
