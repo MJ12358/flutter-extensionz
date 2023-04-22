@@ -1,6 +1,6 @@
 # Flutter Extensionz
 
-## 3.0.4
+## 3.0.5
 
 - Revert closeMessengers on "safe" navigators.
 
