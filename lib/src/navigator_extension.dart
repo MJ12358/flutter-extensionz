@@ -64,7 +64,6 @@ extension NavigatorExtension on BuildContext {
   void safePush(Widget page) {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (mounted) {
-        closeMessengers();
         push(page);
       }
     });
@@ -75,7 +74,6 @@ extension NavigatorExtension on BuildContext {
   void safePop([Object? result]) {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (mounted) {
-        closeMessengers();
         pop(result);
       }
     });
@@ -86,7 +84,6 @@ extension NavigatorExtension on BuildContext {
   void safePushReplacement(Widget page) {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (mounted) {
-        closeMessengers();
         pushReplacement(page);
       }
     });
@@ -97,7 +94,6 @@ extension NavigatorExtension on BuildContext {
   void safePushAndRemove(Widget page) {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (mounted) {
-        closeMessengers();
         pushAndRemove(page);
       }
     });
