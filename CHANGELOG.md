@@ -1,5 +1,9 @@
 # Flutter Extensionz
 
+## 3.0.4
+
+- Revert closeMessengers on "safe" navigators.
+
 ## 3.0.3
 
 - Add `pushRoute` and `popRoute` to navigator.
