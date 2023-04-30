@@ -1,5 +1,9 @@
 # Flutter Extensionz
 
+## 3.0.6
+
+- Hotfix alert dialog return value.
+
 ## 3.0.5
 
 - Revert closeMessengers on "safe" navigators.

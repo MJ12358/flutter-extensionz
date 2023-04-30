@@ -1,14 +1,14 @@
 part of flutter_extensionz;
 
 extension BuildContextExtension on BuildContext {
-  /// Wraps the `showDialog` method and builds an `AlertDialog`.
-  Future<bool> showAlertDialog(
+  /// Wraps the [showDialog] method and builds an [AlertDialog].
+  Future<bool?> showAlertDialog(
     Widget content, {
     String title = 'Confirm',
     String cancelText = 'Cancel',
     String acceptText = 'Accept',
   }) async {
-    return await showDialog(
+    return showDialog(
       context: this,
       builder: (BuildContext context) {
         return AlertDialog(
@@ -29,7 +29,7 @@ extension BuildContextExtension on BuildContext {
     );
   }
 
-  /// Wraps the `showDialog` method and builds a `SimpleDialog`.
+  /// Wraps the [showDialog] method and builds a [SimpleDialog].
   Future<T?> showSimpleDialog<T>({
     required Widget title,
     required List<Widget> children,
@@ -45,7 +45,7 @@ extension BuildContextExtension on BuildContext {
     );
   }
 
-  /// Wraps the `showModalBottomSheet` method.
+  /// Wraps the [showModalBottomSheet] method.
   Future<T?> showBottomSheet<T>({
     required Widget child,
     bool isScrollControlled = false,
@@ -61,7 +61,7 @@ extension BuildContextExtension on BuildContext {
     );
   }
 
-  /// Wraps the `showDatePicker` method.
+  /// Wraps the [showDatePicker] method.
   Future<DateTime?> showDatePicker({
     DateTime? initialDate,
     DateTime? firstDate,
