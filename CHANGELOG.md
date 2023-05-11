@@ -1,5 +1,9 @@
 # Flutter Extensionz
 
+## 3.1.0
+
+- Update dependency constraints.
+
 ## 3.0.7
 
 - Bump dependencies.
