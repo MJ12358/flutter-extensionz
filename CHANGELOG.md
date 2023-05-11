@@ -1,5 +1,9 @@
 # Flutter Extensionz
 
+## 3.0.7
+
+- Bump dependencies.
+
 ## 3.0.6
 
 - Hotfix alert dialog return value.

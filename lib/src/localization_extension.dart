@@ -1,5 +1,10 @@
 part of flutter_extensionz;
 
+// TODO: you dont need build context here
+// think about moving this elsewhere
+// maybe even into dart_extensionz, cause
+// 'Intl' package is written in pure dart...
+
 extension LocalizationExtension on BuildContext {
   /// Get localized currency symbol.
   ///
