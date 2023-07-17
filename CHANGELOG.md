@@ -1,5 +1,9 @@
 # Flutter Extensionz
 
+## 3.1.1
+
+- Use `ThemeData.estimateBrightnessForColor` method instead when getting `ColorExtension.brightness`.
+
 ## 3.1.0
 
 - Update dependency constraints.

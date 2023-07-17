@@ -1,14 +1,10 @@
 part of flutter_extensionz;
 
 extension ColorExtension on Color {
-  /// Determine if a color is `light` or `dark`.
+  /// Determines whether the given [Color]
+  /// is [Brightness.light] or [Brightness.dark].
   Brightness get brightness {
-    final double relativeLuminance = computeLuminance();
-    const double threshold = 0.45;
-    if ((relativeLuminance + 0.05) * (relativeLuminance + 0.05) > threshold) {
-      return Brightness.light;
-    }
-    return Brightness.dark;
+    return ThemeData.estimateBrightnessForColor(this);
   }
 
   /// Get black or white based on the brightness of this color.

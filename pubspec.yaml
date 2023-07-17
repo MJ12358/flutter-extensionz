@@ -1,6 +1,6 @@
 name: flutter_extensionz
 description: A set of Flutter extensions I use in various projects. Including BuildContext, Color extensions and more.
-version: 3.1.0
+version: 3.1.1
 repository: https://github.com/mj12358/flutter-extensions
 
 environment:
