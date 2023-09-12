@@ -1,8 +1,13 @@
 # Flutter Extensionz
 
+## 4.0.0
+
+- **BREAKING**:
+- Remove `Intl` related extensions and move to a separate repository.
+
 ## 3.1.2
 
-- Add `onCanceled` and `onAccepted` params to `showAlertDialog`;
+- Add `onCancel` and `onAccept` params to `showAlertDialog`;
 - Update some comments.
 
 ## 3.1.1

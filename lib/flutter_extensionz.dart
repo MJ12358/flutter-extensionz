@@ -1,17 +1,14 @@
 library flutter_extensionz;
 
-import 'dart:io';
 import 'dart:math' as math;
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart' hide showDatePicker;
 import 'package:flutter/material.dart' as date_picker show showDatePicker;
-import 'package:intl/intl.dart';
 
 part 'src/buildcontext_extension.dart';
 part 'src/color_extension.dart';
 part 'src/focus_scope_extension.dart';
-part 'src/localization_extension.dart';
 part 'src/media_query_extension.dart';
 part 'src/modal_route_extension.dart';
 part 'src/navigator_extension.dart';

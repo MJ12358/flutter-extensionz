@@ -7,8 +7,8 @@ extension BuildContextExtension on BuildContext {
     String title = 'Confirm',
     String cancelText = 'Cancel',
     String acceptText = 'Accept',
-    Function()? onCanceled,
-    Function()? onAccepted,
+    Function()? onCancel,
+    Function()? onAccept,
   }) {
     return showDialog<bool?>(
       context: this,
@@ -30,9 +30,9 @@ extension BuildContextExtension on BuildContext {
       },
     ).then((bool? value) {
       if (value != null && value) {
-        return onAccepted?.call();
+        return onAccept?.call();
       } else {
-        return onCanceled?.call();
+        return onCancel?.call();
       }
     });
   }
