@@ -114,7 +114,7 @@ extension ColorExtension on Color {
     return 'Unknown';
   }
 
-  /// Get a random color from `Colors.primaries`.
+  /// Get a random color from [Colors.primaries].
   static Color get random {
     final math.Random random = math.Random();
     final int i = 1 + random.nextInt(Colors.primaries.length - 1);

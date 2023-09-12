@@ -7,8 +7,10 @@ extension BuildContextExtension on BuildContext {
     String title = 'Confirm',
     String cancelText = 'Cancel',
     String acceptText = 'Accept',
-  }) async {
-    return showDialog(
+    Function()? onCanceled,
+    Function()? onAccepted,
+  }) {
+    return showDialog<bool?>(
       context: this,
       builder: (BuildContext context) {
         return AlertDialog(
@@ -26,14 +28,20 @@ extension BuildContextExtension on BuildContext {
           ],
         );
       },
-    );
+    ).then((bool? value) {
+      if (value != null && value) {
+        return onAccepted?.call();
+      } else {
+        return onCanceled?.call();
+      }
+    });
   }
 
   /// Wraps the [showDialog] method and builds a [SimpleDialog].
   Future<T?> showSimpleDialog<T>({
     required Widget title,
     required List<Widget> children,
-  }) async {
+  }) {
     return showDialog<T>(
       context: this,
       builder: (BuildContext context) {
@@ -50,7 +58,7 @@ extension BuildContextExtension on BuildContext {
     required Widget child,
     bool isScrollControlled = false,
     bool isDismissible = true,
-  }) async {
+  }) {
     return showModalBottomSheet<T>(
       context: this,
       isDismissible: isDismissible,

@@ -1,5 +1,7 @@
 # Flutter Extensionz
 
+![pub package](https://img.shields.io/pub/v/flutter_extensionz)
+
 A set of [Flutter](https://flutter.dev) extensions I use in various projects.
 
 ## Usage

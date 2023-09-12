@@ -3,7 +3,7 @@ part of flutter_extensionz;
 extension ScaffoldMessengerExtension on BuildContext {
   ScaffoldMessengerState get scaffoldMessenger => ScaffoldMessenger.of(this);
 
-  /// Wraps the `ScaffoldMessenger.of(context).showMaterialBanner` method.
+  /// Wraps the [ScaffoldMessenger.of(context).showMaterialBanner] method.
   ///
   /// While also hiding the current material banner.
   void showMaterialBanner(
@@ -27,12 +27,12 @@ extension ScaffoldMessengerExtension on BuildContext {
       );
   }
 
-  /// Wraps the `ScaffoldMessenger.of(context).clearMaterialBanners` method.
+  /// Wraps the [ScaffoldMessenger.of(context).clearMaterialBanners] method.
   void closeMaterialBanner() {
     scaffoldMessenger.clearMaterialBanners();
   }
 
-  /// Wraps the `ScaffoldMessenger.of(context).showSnackBar` method.
+  /// Wraps the [ScaffoldMessenger.of(context).showSnackBar] method.
   ///
   /// While also hiding the current snackbar.
   void showSnackBar(
@@ -56,7 +56,7 @@ extension ScaffoldMessengerExtension on BuildContext {
       );
   }
 
-  /// Wraps the `ScaffoldMessenger.of(context).clearSnackBars` method.
+  /// Wraps the [ScaffoldMessenger.of(context).clearSnackBars] method.
   void closeSnackBar() {
     scaffoldMessenger.clearSnackBars();
   }

@@ -1,9 +1,9 @@
 part of flutter_extensionz;
 
 extension StringExtension on String {
-  /// Convert this string into a Color.
+  /// Convert this string to a Color.
   ///
-  /// Only hex strings currently supported.
+  /// Only hex strings are currently supported.
   Color? toColor([Color? fallback]) {
     if (trim().isEmpty) {
       return fallback;

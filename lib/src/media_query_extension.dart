@@ -1,13 +1,16 @@
 part of flutter_extensionz;
 
 extension MediaQueryExtension on BuildContext {
-  /// Equivalent to `MediaQuery.of(context)`.
+  /// Equivalent to [MediaQuery.of(context)].
   MediaQueryData get mediaQuery => MediaQuery.of(this);
 
+  /// Equivalent to [MediaQuery.of(context).size].
   Size get deviceSize => mediaQuery.size;
 
+  /// Equivalent to [MediaQuery.of(context).size.height].
   double get height => deviceSize.height;
 
+  /// Equivalent to [MediaQuery.of(context).size.width].
   double get width => deviceSize.width;
 
   bool get isLandscape => mediaQuery.orientation == Orientation.landscape;

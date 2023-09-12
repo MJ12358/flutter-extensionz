@@ -1,5 +1,10 @@
 # Flutter Extensionz
 
+## 3.1.2
+
+- Add `onCanceled` and `onAccepted` params to `showAlertDialog`;
+- Update some comments.
+
 ## 3.1.1
 
 - Use `ThemeData.estimateBrightnessForColor` method instead when getting `ColorExtension.brightness`.
@@ -35,7 +40,7 @@
 
 ## 3.0.0
 
-- BREAKING:
+- **BREAKING**:
 - Remove dependency on baked in localizations in favor of user provided ones.
 
 ## 2.2.0
@@ -53,6 +58,7 @@
 
 ## 2.0.0
 
+- **BREAKING**:
 - Ensure only the `flutter_extensionz.dart` file can be imported.
 
 ## 1.0.3
