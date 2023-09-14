@@ -30,9 +30,11 @@ extension BuildContextExtension on BuildContext {
       },
     ).then((bool? value) {
       if (value != null && value) {
-        return onAccept?.call();
+        onAccept?.call();
+        return true;
       } else {
-        return onCancel?.call();
+        onCancel?.call();
+        return false;
       }
     });
   }

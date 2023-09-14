@@ -1,9 +1,13 @@
 # Flutter Extensionz
 
+## 4.0.1
+
+- Hotfix `showAlertDialog` return value.
+
 ## 4.0.0
 
 - **BREAKING**:
-- Remove `Intl` related extensions and move to a separate repository.
+- Remove `Intl` related extensions and move to a [separate repository](https://pub.dev/packages/dart_extensionz).
 
 ## 3.1.2
 
