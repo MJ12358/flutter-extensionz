@@ -1,5 +1,9 @@
 # Flutter Extensionz
 
+## 4.1.0
+
+- Adjust default params for `showDatePicker`.
+
 ## 4.0.1
 
 - Hotfix `showAlertDialog` return value.
@@ -7,7 +11,7 @@
 ## 4.0.0
 
 - **BREAKING**:
-- Remove `Intl` related extensions and move to a [separate repository](https://pub.dev/packages/dart_extensionz).
+  - Remove `Intl` related extensions and move to a [separate repository](https://pub.dev/packages/dart_extensionz).
 
 ## 3.1.2
 
@@ -50,7 +54,7 @@
 ## 3.0.0
 
 - **BREAKING**:
-- Remove dependency on baked in localizations in favor of user provided ones.
+  - Remove dependency on baked in localizations in favor of user provided ones.
 
 ## 2.2.0
 
@@ -68,7 +72,7 @@
 ## 2.0.0
 
 - **BREAKING**:
-- Ensure only the `flutter_extensionz.dart` file can be imported.
+  - Ensure only the `flutter_extensionz.dart` file can be imported.
 
 ## 1.0.3
 

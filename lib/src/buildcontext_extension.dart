@@ -31,11 +31,10 @@ extension BuildContextExtension on BuildContext {
     ).then((bool? value) {
       if (value != null && value) {
         onAccept?.call();
-        return true;
       } else {
         onCancel?.call();
-        return false;
       }
+      return value;
     });
   }
 
@@ -46,7 +45,7 @@ extension BuildContextExtension on BuildContext {
   }) {
     return showDialog<T>(
       context: this,
-      builder: (BuildContext context) {
+      builder: (_) {
         return SimpleDialog(
           title: title,
           children: children,
@@ -65,7 +64,7 @@ extension BuildContextExtension on BuildContext {
       context: this,
       isDismissible: isDismissible,
       isScrollControlled: isScrollControlled,
-      builder: (BuildContext context) {
+      builder: (_) {
         return child;
       },
     );
@@ -83,8 +82,9 @@ extension BuildContextExtension on BuildContext {
     return date_picker.showDatePicker(
       context: this,
       initialDate: initialDate ?? DateTime.now(),
-      firstDate: firstDate ?? DateTime.now(),
-      lastDate: lastDate ?? DateTime.now().add(const Duration(days: 365)),
+      firstDate: firstDate ?? DateTime.fromMillisecondsSinceEpoch(0),
+      lastDate: lastDate ??
+          DateTime.fromMillisecondsSinceEpoch(double.maxFinite.toInt()),
       currentDate: currentDate,
       initialEntryMode: entryMode,
       initialDatePickerMode: pickerMode,
