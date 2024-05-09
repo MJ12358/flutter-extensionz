@@ -1,6 +1,7 @@
 part of flutter_extensionz;
 
 extension ScaffoldMessengerExtension on BuildContext {
+  /// Equivalent to [ScaffoldMessanger.of(context)].
   ScaffoldMessengerState get scaffoldMessenger => ScaffoldMessenger.of(this);
 
   /// Wraps the [ScaffoldMessenger.of(context).showMaterialBanner] method.

@@ -5,7 +5,7 @@ extension MediaQueryExtension on BuildContext {
   MediaQueryData get mediaQuery => MediaQuery.of(this);
 
   /// Equivalent to [MediaQuery.of(context).size].
-  Size get deviceSize => mediaQuery.size;
+  Size get deviceSize => MediaQuery.sizeOf(this);
 
   /// Equivalent to [MediaQuery.of(context).size.height].
   double get height => deviceSize.height;
@@ -13,9 +13,12 @@ extension MediaQueryExtension on BuildContext {
   /// Equivalent to [MediaQuery.of(context).size.width].
   double get width => deviceSize.width;
 
-  bool get isLandscape => mediaQuery.orientation == Orientation.landscape;
+  /// Determines if the [Orientation] is landscape.
+  bool get isLandscape =>
+      MediaQuery.orientationOf(this) == Orientation.landscape;
 
-  bool get isPortrait => mediaQuery.orientation == Orientation.portrait;
+  /// Determines if the [Orientation] is portrait.
+  bool get isPortrait => MediaQuery.orientationOf(this) == Orientation.portrait;
 
   double getProportionateScreenHeight(
     double height, [

@@ -2,6 +2,9 @@
 
 ## 4.1.0
 
+- Add `isDark`/`isLight` convenience getters to `ColorExtension`.
+- Add `insert` method to `TextEditingControllerExtension`.
+- Utilize optimized `MediaQuery` methods.
 - Adjust default params for `showDatePicker`.
 
 ## 4.0.1

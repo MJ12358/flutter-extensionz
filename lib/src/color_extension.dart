@@ -1,13 +1,18 @@
 part of flutter_extensionz;
 
 extension ColorExtension on Color {
-  /// Determines whether the given [Color]
-  /// is [Brightness.light] or [Brightness.dark].
+  /// Returns the [Brightness] for this [Color].
   Brightness get brightness {
     return ThemeData.estimateBrightnessForColor(this);
   }
 
-  /// Get black or white based on the brightness of this color.
+  /// Determines whether the given [Color] is dark.
+  bool get isDark => brightness == Brightness.dark;
+
+  /// Determines whether the given [Color] is light.
+  bool get isLight => brightness == Brightness.light;
+
+  /// Get black or white based on the brightness of this [Color].
   Color get blackOrWhite {
     return brightness == Brightness.dark ? Colors.white : Colors.black;
   }
@@ -28,6 +33,7 @@ extension ColorExtension on Color {
     return hslLight.toColor();
   }
 
+  /// Get a [Color] shade using the given [value].
   Color shade([double value = 0.5]) {
     if (value <= 0) {
       return materialColor[50]!;
@@ -40,6 +46,7 @@ extension ColorExtension on Color {
     return materialColor[shade ~/ mod]!;
   }
 
+  /// Get a [MaterialColor] from this [Color].
   MaterialColor get materialColor {
     final List<double> strengths = <double>[.05];
     final Map<int, Color> swatch = <int, Color>{};
@@ -64,7 +71,7 @@ extension ColorExtension on Color {
     return MaterialColor(value, swatch);
   }
 
-  /// Get the complimentary color of this color.
+  /// Get the complimentary color of this [Color].
   Color get complimentary {
     final HSLColor hsl = HSLColor.fromColor(this);
     double hue = hsl.hue + 180;
@@ -79,9 +86,9 @@ extension ColorExtension on Color {
     ).toColor();
   }
 
-  /// Get the name of this color.
+  /// Get the name of this [Color].
   ///
-  /// Only material colors are supported.
+  /// Only [MaterialColor]s are supported.
   String get name {
     final Map<String, Color> colorMap = <String, Color>{
       'Red': Colors.red,

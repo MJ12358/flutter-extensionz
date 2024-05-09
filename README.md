@@ -4,12 +4,20 @@
 
 A set of [Flutter](https://flutter.dev) extensions I use in various projects.
 
-## Usage
+## Features
 
-```dart
-import 'package:flutter_extensionz/flutter_extensionz.dart';
+- BuildContextExtension
+- ColorExtension
+- FocusScopeExtension
+- MediaQueryExtension
+- ModalRouteExtension
+- NavigatorExtension
+- ScaffoldExtension
+- ScaffoldMessengerExtension
+- StringExtension
+- TextEditingControllerExtension
+- ThemeExtension
 
-context.showSnackBar(Text('The snack bar text'));
-```
+## Additional Information
 
 The [generated documentation](https://pub.dev/documentation/flutter_extensionz/latest/flutter_extensionz/flutter_extensionz-library.html) will give you a great overview of all that is available.
