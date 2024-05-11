@@ -8,8 +8,8 @@ extension BuildContextExtension on BuildContext {
   /// [onCancel] is called when there is no return value.
   Future<T?> showDialog<T>({
     required Widget child,
-    Function(T)? onValue,
-    Function(T?)? onCancel,
+    ValueChanged<T>? onValue,
+    VoidCallback? onCancel,
   }) {
     return material
         .showDialog<T?>(
@@ -19,6 +19,8 @@ extension BuildContextExtension on BuildContext {
         .then((T? value) {
       if (value != null) {
         onValue?.call(value);
+      } else {
+        onCancel?.call();
       }
       return value;
     });
@@ -34,8 +36,8 @@ extension BuildContextExtension on BuildContext {
     String title = 'Confirm',
     String acceptText = 'Accept',
     String cancelText = 'Cancel',
-    Function()? onAccept,
-    Function()? onCancel,
+    VoidCallback? onAccept,
+    VoidCallback? onCancel,
   }) {
     return material
         .showDialog<bool?>(

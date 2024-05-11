@@ -1,5 +1,10 @@
 # Flutter Extensionz
 
+## 4.2.1
+
+- Add `onCancel` to `showDialog`.
+- Fix dialog callback signatures.
+
 ## 4.2.0
 
 - Add `showDialog` to `BuildContextExtension`.
