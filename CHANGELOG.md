@@ -1,5 +1,9 @@
 # Flutter Extensionz
 
+## 4.2.0
+
+- Add `showDialog` to `BuildContextExtension`.
+
 ## 4.1.0
 
 - Add `isDark`/`isLight` convenience getters to `ColorExtension`.

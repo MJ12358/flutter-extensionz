@@ -1,16 +1,44 @@
 part of flutter_extensionz;
 
 extension BuildContextExtension on BuildContext {
-  /// Wraps the [showDialog] method and builds an [AlertDialog].
+  /// Wraps [material.showDialog], which builds a [child].
+  ///
+  /// [onValue] is called when there is a return value.
+  ///
+  /// [onCancel] is called when there is no return value.
+  Future<T?> showDialog<T>({
+    required Widget child,
+    Function(T)? onValue,
+    Function(T?)? onCancel,
+  }) {
+    return material
+        .showDialog<T?>(
+      context: this,
+      builder: (_) => child,
+    )
+        .then((T? value) {
+      if (value != null) {
+        onValue?.call(value);
+      }
+      return value;
+    });
+  }
+
+  /// Wraps the [material.showDialog] method, which builds an [AlertDialog].
+  ///
+  /// [onAccept] is called when the return value is true.
+  ///
+  /// [onCancel] is called when the return value is false.
   Future<bool?> showAlertDialog(
     Widget content, {
     String title = 'Confirm',
-    String cancelText = 'Cancel',
     String acceptText = 'Accept',
-    Function()? onCancel,
+    String cancelText = 'Cancel',
     Function()? onAccept,
+    Function()? onCancel,
   }) {
-    return showDialog<bool?>(
+    return material
+        .showDialog<bool?>(
       context: this,
       builder: (BuildContext context) {
         return AlertDialog(
@@ -28,7 +56,8 @@ extension BuildContextExtension on BuildContext {
           ],
         );
       },
-    ).then((bool? value) {
+    )
+        .then((bool? value) {
       if (value != null && value) {
         onAccept?.call();
       } else {
@@ -38,12 +67,12 @@ extension BuildContextExtension on BuildContext {
     });
   }
 
-  /// Wraps the [showDialog] method and builds a [SimpleDialog].
+  /// Wraps the [material.showDialog] method, which builds a [SimpleDialog].
   Future<T?> showSimpleDialog<T>({
     required Widget title,
     required List<Widget> children,
   }) {
-    return showDialog<T>(
+    return material.showDialog<T>(
       context: this,
       builder: (_) {
         return SimpleDialog(
@@ -79,7 +108,7 @@ extension BuildContextExtension on BuildContext {
     DatePickerEntryMode entryMode = DatePickerEntryMode.calendar,
     DatePickerMode pickerMode = DatePickerMode.day,
   }) {
-    return date_picker.showDatePicker(
+    return material.showDatePicker(
       context: this,
       initialDate: initialDate ?? DateTime.now(),
       firstDate: firstDate ?? DateTime.fromMillisecondsSinceEpoch(0),
