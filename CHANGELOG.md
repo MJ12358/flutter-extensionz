@@ -1,5 +1,9 @@
 # Flutter Extensionz
 
+## 4.2.2
+
+- Add `onValue` callback to `NavigatorExtension.push/pushRoute/safePush`.
+
 ## 4.2.1
 
 - Add `onCancel` to `showDialog`.

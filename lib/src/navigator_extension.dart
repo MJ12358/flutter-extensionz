@@ -8,17 +8,33 @@ extension NavigatorExtension on BuildContext {
   Future<T?> push<T>(
     Widget page, {
     bool fullscreenDialog = false,
+    ValueChanged<T>? onValue,
   }) {
-    return navigator.push(
+    return navigator
+        .push(
       MaterialPageRoute<T>(
         builder: (_) => page,
         fullscreenDialog: fullscreenDialog,
       ),
-    );
+    )
+        .then((T? value) {
+      if (value != null) {
+        onValue?.call(value);
+      }
+      return value;
+    });
   }
 
-  Future<T?> pushRoute<T>(PageRouteBuilder<T> route) {
-    return navigator.push(route);
+  Future<T?> pushRoute<T>(
+    PageRouteBuilder<T> route, {
+    ValueChanged<T>? onValue,
+  }) {
+    return navigator.push(route).then((T? value) {
+      if (value != null) {
+        onValue?.call(value);
+      }
+      return value;
+    });
   }
 
   void popRoute<T>(PageRouteBuilder<T> route) {
@@ -41,9 +57,13 @@ extension NavigatorExtension on BuildContext {
   }
 
   /// Wraps the [Navigator.pushReplacement] method.
-  Future<T?> pushReplacement<T>(Widget page) {
+  Future<T?> pushReplacement<T>(
+    Widget page, {
+    bool fullScreenDialog = false,
+  }) {
     return navigator.pushReplacement(
       MaterialPageRoute<T>(
+        fullscreenDialog: fullScreenDialog,
         builder: (_) => page,
       ),
     );
@@ -61,10 +81,18 @@ extension NavigatorExtension on BuildContext {
 
   /// Uses [WidgetsBinding.instance.postFrameCallback] and
   /// [mounted] to ensure the [page] can be pushed.
-  void safePush(Widget page) {
+  void safePush<T>(
+    Widget page, {
+    bool fullscreenDialog = false,
+    ValueChanged<T>? onValue,
+  }) {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (mounted) {
-        push(page);
+        push(
+          page,
+          fullscreenDialog: fullscreenDialog,
+          onValue: onValue,
+        );
       }
     });
   }
@@ -81,10 +109,16 @@ extension NavigatorExtension on BuildContext {
 
   /// Uses [WidgetsBinding.instance.postFrameCallback] and
   /// [mounted] to ensure the [page] can be pushed and replaced.
-  void safePushReplacement(Widget page) {
+  void safePushReplacement(
+    Widget page, {
+    bool fullScreenDialog = false,
+  }) {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (mounted) {
-        pushReplacement(page);
+        pushReplacement(
+          page,
+          fullScreenDialog: fullScreenDialog,
+        );
       }
     });
   }
