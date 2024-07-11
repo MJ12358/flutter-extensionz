@@ -20,6 +20,9 @@ extension MediaQueryExtension on BuildContext {
   /// Determines if the [Orientation] is portrait.
   bool get isPortrait => MediaQuery.orientationOf(this) == Orientation.portrait;
 
+  /// Determines if the soft keyboard is visible.
+  bool get isKeyboardVisible => MediaQuery.viewInsetsOf(this).bottom == 0;
+
   double getProportionateScreenHeight(
     double height, [
     double layoutHeight = 812.0,

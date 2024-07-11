@@ -108,6 +108,7 @@ extension ColorExtension on Color {
       'Orange': Colors.orange,
       'Deep Orange': Colors.deepOrange,
       'Brown': Colors.brown,
+      'Grey': Colors.grey,
       'Blue Grey': Colors.blueGrey,
       'White': Colors.white,
       'Black': Colors.black,

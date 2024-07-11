@@ -18,3 +18,4 @@ part 'src/scaffold_messanger_extension.dart';
 part 'src/string_extension.dart';
 part 'src/text_editing_controller_extension.dart';
 part 'src/theme_extension.dart';
+part 'src/timeofday_extension.dart';

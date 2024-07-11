@@ -1,5 +1,10 @@
 # Flutter Extensionz
 
+## 4.3.0
+
+- Add `TimeOfDayExtension`.
+- Add `isKeyboardVisible` to `MediaQueryExtension`.
+
 ## 4.2.2
 
 - Add `onValue` callback to `NavigatorExtension.push/pushRoute/safePush`.
