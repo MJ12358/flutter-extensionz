@@ -13,6 +13,13 @@ extension NullableTimeOfDayExtension on TimeOfDay? {
     }
     return this!.toDateTime();
   }
+
+  String format(BuildContext context) {
+    if (this == null) {
+      return '';
+    }
+    return this!.format(context);
+  }
 }
 
 extension DateTimeExtension on DateTime {

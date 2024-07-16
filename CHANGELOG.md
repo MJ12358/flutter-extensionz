@@ -1,5 +1,9 @@
 # Flutter Extensionz
 
+## 4.3.2
+
+- Add nullable `format` to `TimeOfDayExtension`.
+
 ## 4.3.1
 
 - Add nullable `TimeOfDay` and `DateTime` extensions.
