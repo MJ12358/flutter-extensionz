@@ -2,7 +2,14 @@ part of flutter_extensionz;
 
 extension TimeOfDayExtension on TimeOfDay {
   DateTime toDateTime() {
-    return DateTime(0, 1, 1, hour, minute);
+    final DateTime now = DateTime.now();
+    return DateTime(
+      now.year,
+      now.month,
+      now.day,
+      hour,
+      minute,
+    );
   }
 }
 
@@ -24,7 +31,10 @@ extension NullableTimeOfDayExtension on TimeOfDay? {
 
 extension DateTimeExtension on DateTime {
   TimeOfDay toTimeOfDay() {
-    return TimeOfDay(hour: hour, minute: minute);
+    return TimeOfDay(
+      hour: hour,
+      minute: minute,
+    );
   }
 }
 

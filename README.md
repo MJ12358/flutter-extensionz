@@ -17,6 +17,7 @@ A set of [Flutter](https://flutter.dev) extensions I use in various projects.
 - StringExtension
 - TextEditingControllerExtension
 - ThemeExtension
+- TimeOfDayExtension
 
 ## Additional Information
 

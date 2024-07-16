@@ -1,5 +1,9 @@
 # Flutter Extensionz
 
+## 4.3.3
+
+- Preserve yMd, from `TimeOfDay`, when converting to datetime.
+
 ## 4.3.2
 
 - Add nullable `format` to `TimeOfDayExtension`.
