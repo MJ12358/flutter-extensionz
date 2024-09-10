@@ -7,6 +7,7 @@ import 'package:flutter/material.dart' hide showDatePicker, showDialog;
 import 'package:flutter/material.dart' as material
     show showDatePicker, showDialog;
 
+part 'src/app_lifecycle_state_extension.dart';
 part 'src/buildcontext_extension.dart';
 part 'src/color_extension.dart';
 part 'src/focus_scope_extension.dart';

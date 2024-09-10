@@ -132,4 +132,29 @@ extension NavigatorExtension on BuildContext {
       }
     });
   }
+
+  /// Wraps the [Navigator.restorablePush] method.
+  void restorablePush(
+    Widget page, {
+    bool fullscreenDialog = false,
+  }) {
+    navigator.restorablePush((_, __) {
+      return MaterialPageRoute<void>(
+        builder: (_) => page,
+        fullscreenDialog: fullscreenDialog,
+      );
+    });
+  }
+
+  /// Wraps the [Navigator.restorablePushAndRemoveUntil] method.
+  void restorablePushAndRemove(Widget page) {
+    navigator.restorablePushAndRemoveUntil(
+      (_, __) {
+        return MaterialPageRoute<void>(
+          builder: (_) => page,
+        );
+      },
+      (Route<dynamic> route) => false,
+    );
+  }
 }

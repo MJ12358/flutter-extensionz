@@ -1,5 +1,10 @@
 # Flutter Extensionz
 
+## 4.4.0
+
+- Add `restorablePush` and `restorablePushAndRemove` to `NavigatorExtension`.
+- Introduce `AppLifecycleStateExtension`.
+
 ## 4.3.3
 
 - Preserve yMd, from `TimeOfDay`, when converting to datetime.
