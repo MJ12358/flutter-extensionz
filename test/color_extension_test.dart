@@ -44,4 +44,14 @@ void main() {
     expect(Colors.transparent.name, 'Transparent');
     expect(const Color(0xFF123456).name, 'Unknown');
   });
+
+  // TODO: This is not giving the expected result
+  // test('toInt', () {
+  //   expect(Colors.red.toInt(), 0xFFFF0000);
+  //   expect(Colors.green.toInt(), 0xFF00FF00);
+  //   expect(Colors.blue.toInt(), 0xFF0000FF);
+  //   expect(Colors.black.toInt(), 0xFF000000);
+  //   expect(Colors.white.toInt(), 0xFFFFFFFF);
+  //   expect(const Color(0xFF123456).toInt(), 0xFF123456);
+  // });
 }

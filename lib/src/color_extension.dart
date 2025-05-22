@@ -17,6 +17,22 @@ extension ColorExtension on Color {
     return brightness == Brightness.dark ? Colors.white : Colors.black;
   }
 
+  /// Convert this [Color] to an integer.
+  ///
+  /// A 32 bit value representing this color.
+  ///
+  /// This implementation was copied from the Flutter SDK (painting.dart)
+  int toInt() {
+    int _floatToInt8(double x) {
+      return (x * 255.0).round() & 0xff;
+    }
+
+    return _floatToInt8(a) << 24 |
+        _floatToInt8(r) << 16 |
+        _floatToInt8(g) << 8 |
+        _floatToInt8(b) << 0;
+  }
+
   /// Darken a color by [amount].
   Color darken([double amount = 0.1]) {
     final HSLColor hsl = HSLColor.fromColor(this);
@@ -50,9 +66,9 @@ extension ColorExtension on Color {
   MaterialColor get materialColor {
     final List<double> strengths = <double>[.05];
     final Map<int, Color> swatch = <int, Color>{};
-    final int r = red;
-    final int g = green;
-    final int b = blue;
+    final double r = this.r;
+    final double g = this.g;
+    final double b = this.b;
 
     for (int i = 1; i < 10; i++) {
       strengths.add(0.1 * i);
@@ -62,13 +78,13 @@ extension ColorExtension on Color {
       // the color represented should be identical to its own shade500
       final double ds = 0.5 - strength;
       swatch[(strength * 1000).round()] = Color.fromRGBO(
-        r + ((ds < 0 ? r : (255 - r)) * ds).round(),
-        g + ((ds < 0 ? g : (255 - g)) * ds).round(),
-        b + ((ds < 0 ? b : (255 - b)) * ds).round(),
+        (r + ((ds < 0 ? r : (255 - r)) * ds)).round(),
+        (g + ((ds < 0 ? g : (255 - g)) * ds)).round(),
+        (b + ((ds < 0 ? b : (255 - b)) * ds)).round(),
         1,
       );
     }
-    return MaterialColor(value, swatch);
+    return MaterialColor(toInt(), swatch);
   }
 
   /// Get the complimentary color of this [Color].
@@ -79,7 +95,7 @@ extension ColorExtension on Color {
       hue -= 360;
     }
     return HSLColor.fromAHSL(
-      opacity,
+      a,
       hue,
       hsl.saturation,
       hsl.lightness,
@@ -115,7 +131,7 @@ extension ColorExtension on Color {
       'Transparent': Colors.transparent,
     };
     for (final String key in colorMap.keys) {
-      if (colorMap[key]?.value == value) {
+      if (colorMap[key]?.toInt() == toInt()) {
         return key;
       }
     }

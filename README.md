@@ -6,6 +6,7 @@ A set of [Flutter](https://flutter.dev) extensions I use in various projects.
 
 ## Features
 
+- AppLifecycleStateExtension
 - BuildContextExtension
 - ColorExtension
 - FocusScopeExtension

@@ -1,5 +1,10 @@
 # Flutter Extensionz
 
+## 5.0.0
+
+- Update dependencies.
+- Raise minimum dart version.
+
 ## 4.4.0
 
 - Add `restorablePush` and `restorablePushAndRemove` to `NavigatorExtension`.

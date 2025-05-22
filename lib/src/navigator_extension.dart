@@ -79,7 +79,7 @@ extension NavigatorExtension on BuildContext {
     );
   }
 
-  /// Uses [WidgetsBinding.instance.postFrameCallback] and
+  /// Uses [WidgetsBinding.addPostFrameCallback] and
   /// [mounted] to ensure the [page] can be pushed.
   void safePush<T>(
     Widget page, {
@@ -97,7 +97,7 @@ extension NavigatorExtension on BuildContext {
     });
   }
 
-  /// Uses [WidgetsBinding.instance.postFrameCallback] and
+  /// Uses [WidgetsBinding.addPostFrameCallback] and
   /// [mounted] to ensure the [Navigator] can be popped.
   void safePop([Object? result]) {
     WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -107,7 +107,7 @@ extension NavigatorExtension on BuildContext {
     });
   }
 
-  /// Uses [WidgetsBinding.instance.postFrameCallback] and
+  /// Uses [WidgetsBinding.addPostFrameCallback] and
   /// [mounted] to ensure the [page] can be pushed and replaced.
   void safePushReplacement(
     Widget page, {
@@ -123,7 +123,7 @@ extension NavigatorExtension on BuildContext {
     });
   }
 
-  /// Uses [WidgetsBinding.instance.postFrameCallback] and
+  /// Uses [WidgetsBinding.addPostFrameCallback] and
   /// [mounted] to ensure the [page] can be pushed and removed.
   void safePushAndRemove(Widget page) {
     WidgetsBinding.instance.addPostFrameCallback((_) {
