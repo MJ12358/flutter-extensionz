@@ -1,5 +1,9 @@
 # Flutter Extensionz
 
+## [5.1.0]
+
+- Add support for `rgb` strings within `StringExtension`.`toColor`.
+
 ## [5.0.0]
 
 - Update dependencies.
