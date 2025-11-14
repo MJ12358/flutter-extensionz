@@ -1,5 +1,9 @@
 # Flutter Extensionz
 
+## [5.1.2]
+
+- Utilize `Semantics` on `MaterialBanner` and `SnackBar`.
+
 ## [5.1.1]
 
 - Add support for `rgb` strings within `StringExtension`.`toColor`.

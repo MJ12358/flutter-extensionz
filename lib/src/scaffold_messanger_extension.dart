@@ -16,7 +16,10 @@ extension ScaffoldMessengerExtension on BuildContext {
       ..hideCurrentMaterialBanner()
       ..showMaterialBanner(
         MaterialBanner(
-          content: content,
+          content: Semantics(
+            identifier: 'material_banner',
+            child: content,
+          ),
           leading: icon,
           actions: <Widget>[
             TextButton(
@@ -46,7 +49,11 @@ extension ScaffoldMessengerExtension on BuildContext {
       ..hideCurrentSnackBar()
       ..showSnackBar(
         SnackBar(
-          content: content,
+          content: Semantics(
+            identifier: 'snack_bar',
+            liveRegion: true,
+            child: content,
+          ),
           duration: Duration(seconds: kDebugMode ? 90 : duration),
           action: action ??
               SnackBarAction(
