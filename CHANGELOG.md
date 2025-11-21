@@ -1,5 +1,9 @@
 # Flutter Extensionz
 
+## [5.1.3]
+
+- Use `persist` "false" on `SnackBar` to revert to original behavior.
+
 ## [5.1.2]
 
 - Utilize `Semantics` on `MaterialBanner` and `SnackBar`.
