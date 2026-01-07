@@ -55,7 +55,7 @@ extension ScaffoldMessengerExtension on BuildContext {
             child: content,
           ),
           duration: Duration(seconds: kDebugMode ? 90 : duration),
-          persist: false,
+          persist: action != null,
           action: action ??
               SnackBarAction(
                 label: dismissText,

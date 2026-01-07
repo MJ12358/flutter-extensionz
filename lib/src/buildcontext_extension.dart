@@ -96,7 +96,7 @@ extension BuildContextExtension on BuildContext {
       isDismissible: isDismissible,
       isScrollControlled: isScrollControlled,
       builder: (_) {
-        return child;
+        return SafeArea(child: child);
       },
     );
   }

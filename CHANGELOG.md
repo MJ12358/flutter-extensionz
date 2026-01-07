@@ -1,5 +1,10 @@
 # Flutter Extensionz
 
+## [5.1.4]
+
+- Use `SafeArea` within `showBottomSheet`.
+- Persist `SnackBar` only when `action` is given.
+
 ## [5.1.3]
 
 - Use `persist` "false" on `SnackBar` to revert to original behavior.
