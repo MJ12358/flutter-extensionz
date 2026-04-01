@@ -1,5 +1,9 @@
 # Flutter Extensionz
 
+## [5.1.5]
+
+- Add thumbnail to pub.dev.
+
 ## [5.1.4]
 
 - Use `SafeArea` within `showBottomSheet`.
