@@ -1,4 +1,4 @@
-part of flutter_extensionz;
+part of '../flutter_extensionz.dart';
 
 extension AppLifecycleStateExtension on AppLifecycleState {
   bool get isDetached => this == AppLifecycleState.detached;

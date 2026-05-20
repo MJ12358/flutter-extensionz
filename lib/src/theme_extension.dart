@@ -1,4 +1,4 @@
-part of flutter_extensionz;
+part of '../flutter_extensionz.dart';
 
 extension ThemeExtension on BuildContext {
   /// Equivalent to [Theme.of(context)].

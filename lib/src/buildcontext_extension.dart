@@ -1,4 +1,4 @@
-part of flutter_extensionz;
+part of '../flutter_extensionz.dart';
 
 extension BuildContextExtension on BuildContext {
   /// Wraps [material.showDialog], which builds a [child].

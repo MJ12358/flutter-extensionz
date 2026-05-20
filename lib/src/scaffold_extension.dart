@@ -1,4 +1,4 @@
-part of flutter_extensionz;
+part of '../flutter_extensionz.dart';
 
 extension ScaffoldExtension on BuildContext {
   /// Equivalent to [Scaffold.of(context)].

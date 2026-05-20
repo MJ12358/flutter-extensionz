@@ -1,5 +1,9 @@
 # Flutter Extensionz
 
+## [5.1.6]
+
+- Fix static analysis warning: "part-of directive uses a library name"
+
 ## [5.1.5]
 
 - Add thumbnail to pub.dev.

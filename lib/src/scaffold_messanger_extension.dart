@@ -1,4 +1,4 @@
-part of flutter_extensionz;
+part of '../flutter_extensionz.dart';
 
 extension ScaffoldMessengerExtension on BuildContext {
   /// Equivalent to [ScaffoldMessanger.of(context)].

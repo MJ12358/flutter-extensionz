@@ -1,4 +1,4 @@
-part of flutter_extensionz;
+part of '../flutter_extensionz.dart';
 
 extension TimeOfDayExtension on TimeOfDay {
   DateTime toDateTime() {
