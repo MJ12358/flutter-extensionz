@@ -1,5 +1,6 @@
 part of '../flutter_extensionz.dart';
 
+/// [Color] extension.
 extension ColorExtension on Color {
   /// Returns the [Brightness] for this [Color].
   Brightness get brightness {
@@ -23,14 +24,14 @@ extension ColorExtension on Color {
   ///
   /// This implementation was copied from the Flutter SDK (painting.dart)
   int toInt() {
-    int _floatToInt8(double x) {
+    int floatToInt8(double x) {
       return (x * 255.0).round() & 0xff;
     }
 
-    return _floatToInt8(a) << 24 |
-        _floatToInt8(r) << 16 |
-        _floatToInt8(g) << 8 |
-        _floatToInt8(b) << 0;
+    return floatToInt8(a) << 24 |
+        floatToInt8(r) << 16 |
+        floatToInt8(g) << 8 |
+        floatToInt8(b) << 0;
   }
 
   /// Darken a color by [amount].

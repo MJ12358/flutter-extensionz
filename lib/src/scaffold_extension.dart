@@ -1,5 +1,6 @@
 part of '../flutter_extensionz.dart';
 
+/// [Scaffold] extension.
 extension ScaffoldExtension on BuildContext {
   /// Equivalent to [Scaffold.of(context)].
   ScaffoldState get scaffold => Scaffold.of(this);

@@ -1,26 +1,23 @@
 part of '../flutter_extensionz.dart';
 
-extension TimeOfDayExtension on TimeOfDay {
-  DateTime toDateTime() {
+/// [TimeOfDay] extension.
+extension TimeOfDayExtension on TimeOfDay? {
+  /// Converts this [TimeOfDay] to a [DateTime] object with today's date.
+  DateTime? toDateTime() {
+    if (this == null) {
+      return null;
+    }
     final DateTime now = DateTime.now();
     return DateTime(
       now.year,
       now.month,
       now.day,
-      hour,
-      minute,
+      this!.hour,
+      this!.minute,
     );
   }
-}
 
-extension NullableTimeOfDayExtension on TimeOfDay? {
-  DateTime? toDateTime() {
-    if (this == null) {
-      return null;
-    }
-    return this!.toDateTime();
-  }
-
+  /// Formats this [TimeOfDay] using the local time format.
   String format(BuildContext context) {
     if (this == null) {
       return '';
@@ -29,20 +26,16 @@ extension NullableTimeOfDayExtension on TimeOfDay? {
   }
 }
 
-extension DateTimeExtension on DateTime {
-  TimeOfDay toTimeOfDay() {
-    return TimeOfDay(
-      hour: hour,
-      minute: minute,
-    );
-  }
-}
-
-extension NullableDateTimeExtension on DateTime? {
+/// [DateTime] extension.
+extension DateTimeExtension on DateTime? {
+  /// Converts this [DateTime] to a [TimeOfDay] object.
   TimeOfDay? toTimeOfDay() {
     if (this == null) {
       return null;
     }
-    return this!.toTimeOfDay();
+    return TimeOfDay(
+      hour: this!.hour,
+      minute: this!.minute,
+    );
   }
 }

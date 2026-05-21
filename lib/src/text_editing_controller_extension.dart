@@ -1,5 +1,6 @@
 part of '../flutter_extensionz.dart';
 
+/// [TextEditingController] extension.
 extension TextEditingControllerExtension on TextEditingController {
   /// Inserts [value] at the cursor of this controller.
   void insert(String value) {

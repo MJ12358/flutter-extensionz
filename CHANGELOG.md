@@ -1,5 +1,10 @@
 # Flutter Extensionz
 
+## [5.1.7]
+
+- Fix some lints.
+- Add more comments.
+
 ## [5.1.6]
 
 - Fix static analysis warning: "part-of directive uses a library name"

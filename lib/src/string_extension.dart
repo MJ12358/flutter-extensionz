@@ -1,5 +1,6 @@
 part of '../flutter_extensionz.dart';
 
+/// [String] extension.
 extension StringExtension on String {
   /// Convert this string to a [Color].
   ///

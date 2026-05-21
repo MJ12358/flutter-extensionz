@@ -1,3 +1,6 @@
+/// A set of Flutter extensions I use in various projects.
+library;
+
 import 'dart:math' as math;
 
 import 'package:flutter/foundation.dart';

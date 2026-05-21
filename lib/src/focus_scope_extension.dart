@@ -1,5 +1,6 @@
 part of '../flutter_extensionz.dart';
 
+/// [FocusScopeNode] extension.
 extension FocusScopeExtension on BuildContext {
   /// Equivalent to [FocusScope.of(context)].
   FocusScopeNode get focusScope => FocusScope.of(this);

@@ -1,5 +1,6 @@
 part of '../flutter_extensionz.dart';
 
+/// [Theme] extension.
 extension ThemeExtension on BuildContext {
   /// Equivalent to [Theme.of(context)].
   ThemeData get theme => Theme.of(this);

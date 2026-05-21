@@ -1,5 +1,6 @@
 part of '../flutter_extensionz.dart';
 
+/// [Navigator] extension.
 extension NavigatorExtension on BuildContext {
   /// Equivalent to [Navigator.of(context)].
   NavigatorState get navigator => Navigator.of(this);
@@ -25,6 +26,7 @@ extension NavigatorExtension on BuildContext {
     });
   }
 
+  /// Wraps the [Navigator.push] method with a custom [PageRouteBuilder].
   Future<T?> pushRoute<T>(
     PageRouteBuilder<T> route, {
     ValueChanged<T>? onValue,
@@ -37,6 +39,7 @@ extension NavigatorExtension on BuildContext {
     });
   }
 
+  /// Wraps the [Navigator.pop] method with a custom [PageRouteBuilder].
   void popRoute<T>(PageRouteBuilder<T> route) {
     navigator.pop(route);
   }

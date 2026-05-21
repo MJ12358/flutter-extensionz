@@ -1,5 +1,6 @@
 part of '../flutter_extensionz.dart';
 
+/// [MediaQuery] extension.
 extension MediaQueryExtension on BuildContext {
   /// Equivalent to [MediaQuery.of(context)].
   MediaQueryData get mediaQuery => MediaQuery.of(this);
@@ -23,6 +24,7 @@ extension MediaQueryExtension on BuildContext {
   /// Determines if the soft keyboard is visible.
   bool get isKeyboardVisible => MediaQuery.viewInsetsOf(this).bottom == 0;
 
+  /// Get the proportionate height as per screen size.
   double getProportionateScreenHeight(
     double height, [
     double layoutHeight = 812.0,
@@ -30,6 +32,7 @@ extension MediaQueryExtension on BuildContext {
     return (height / layoutHeight) * height;
   }
 
+  /// Get the proportionate width as per screen size.
   double getProportionateScreenWidth(
     double width, [
     double layoutWidth = 315.0,
@@ -37,6 +40,8 @@ extension MediaQueryExtension on BuildContext {
     return (width / layoutWidth) * width;
   }
 
+  /// Transform the height based on
+  /// the given [dividedBy] and [reducedBy] values.
   double heightTransformer({
     double dividedBy = 1.0,
     double reducedBy = 0.0,
@@ -44,6 +49,8 @@ extension MediaQueryExtension on BuildContext {
     return (height - ((height / 100) * reducedBy)) / dividedBy;
   }
 
+  /// Transform the width based on
+  /// the given [dividedBy] and [reducedBy] values.
   double widthTransformer({
     double dividedBy = 1.0,
     double reducedBy = 0.0,
@@ -51,6 +58,8 @@ extension MediaQueryExtension on BuildContext {
     return (width - ((width / 100) * reducedBy)) / dividedBy;
   }
 
+  /// Get the ratio of the height to the width based on
+  /// the given [dividedBy], [reducedByW] and [reducedByH] values.
   double ratio({
     double dividedBy = 1.0,
     double reducedByW = 0.0,
