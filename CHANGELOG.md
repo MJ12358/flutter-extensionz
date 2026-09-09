@@ -1,5 +1,10 @@
 # Flutter Extensionz
 
+## [6.0.0]
+
+- Update Flutter and standalone UI packages.
+- Fix lints.
+
 ## [5.1.7]
 
 - Fix some lints.

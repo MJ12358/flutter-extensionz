@@ -13,17 +13,17 @@ extension NavigatorExtension on BuildContext {
   }) {
     return navigator
         .push(
-      MaterialPageRoute<T>(
-        builder: (_) => page,
-        fullscreenDialog: fullscreenDialog,
-      ),
-    )
+          MaterialPageRoute<T>(
+            builder: (_) => page,
+            fullscreenDialog: fullscreenDialog,
+          ),
+        )
         .then((T? value) {
-      if (value != null) {
-        onValue?.call(value);
-      }
-      return value;
-    });
+          if (value != null) {
+            onValue?.call(value);
+          }
+          return value;
+        });
   }
 
   /// Wraps the [Navigator.push] method with a custom [PageRouteBuilder].
@@ -141,7 +141,7 @@ extension NavigatorExtension on BuildContext {
     Widget page, {
     bool fullscreenDialog = false,
   }) {
-    navigator.restorablePush((_, __) {
+    navigator.restorablePush((_, _) {
       return MaterialPageRoute<void>(
         builder: (_) => page,
         fullscreenDialog: fullscreenDialog,
@@ -152,7 +152,7 @@ extension NavigatorExtension on BuildContext {
   /// Wraps the [Navigator.restorablePushAndRemoveUntil] method.
   void restorablePushAndRemove(Widget page) {
     navigator.restorablePushAndRemoveUntil(
-      (_, __) {
+      (_, _) {
         return MaterialPageRoute<void>(
           builder: (_) => page,
         );

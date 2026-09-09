@@ -4,9 +4,9 @@ library;
 import 'dart:math' as math;
 
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart' as material
+import 'package:material_ui/material_ui.dart' as material
     show showDatePicker, showDialog;
-import 'package:flutter/material.dart' hide showDatePicker, showDialog;
+import 'package:material_ui/material_ui.dart' hide showDatePicker, showDialog;
 
 part 'src/app_lifecycle_state_extension.dart';
 part 'src/buildcontext_extension.dart';

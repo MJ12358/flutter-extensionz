@@ -1,6 +1,6 @@
 name: flutter_extensionz
 description: A set of Flutter extensions I use in various projects. Including BuildContext, Color extensions and more.
-version: 5.1.7
+version: 6.0.0
 repository: https://github.com/mj12358/flutter-extensionz
 screenshots:
   - description: Flutter Extensionz Thumbnail
@@ -12,14 +12,15 @@ topics:
   - extension
 
 environment:
-  sdk: ">=3.0.0 <4.0.0"
-  flutter: ">=3.3.0"
+  sdk: ">=3.13.2 <4.0.0"
+  flutter: ">=3.47.2"
 
 dependencies:
   flutter:
     sdk: flutter
+  material_ui: ^1.2.0
 
 dev_dependencies:
-  dart_lintz: 2.0.2
+  dart_lintz: 2.2.0
   flutter_test:
     sdk: flutter
