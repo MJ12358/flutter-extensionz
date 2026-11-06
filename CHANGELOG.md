@@ -1,5 +1,9 @@
 # Flutter Extensionz
 
+## [6.0.1]
+
+- Update dependencies.
+
 ## [6.0.0]
 
 - Update Flutter and standalone UI packages.
